@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Github(props) {
   return (
-    <div>
       <IconButton
         color="inherit"
         aria-label="Github Link"
@@ -18,13 +17,11 @@ function Github(props) {
           color="white"
         />
       </IconButton>
-    </div>
   );
 }
 
 function LinkedIn(props) {
   return (
-    <div>
       <IconButton
         color="inherit"
         aria-label="LinkedIn Link"
@@ -38,8 +35,42 @@ function LinkedIn(props) {
           color="white"
         />
       </IconButton>
-    </div>
   );
 }
 
-export { Github, LinkedIn };
+function Medium(props) {
+  return (
+      <IconButton
+        color="inherit"
+        aria-label="LinkedIn Link"
+        href="https://medium.com/@adoran.moshe"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FontAwesomeIcon
+          icon={['fab', 'medium-m']}
+          size="2x"
+          color="white"
+        />
+      </IconButton>
+  );
+}
+
+function Email(props) {
+  return (
+      <IconButton
+        color="inherit"
+        aria-label="Email Link"
+        href="mailto:adoran.moshe@gmail.com"
+        rel="noopener noreferrer"
+      >
+        <FontAwesomeIcon
+          icon='at'
+          size="2x"
+          color="white"
+        />
+      </IconButton>
+  );
+}
+
+export { Github, LinkedIn, Medium, Email };

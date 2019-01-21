@@ -7,8 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Github, LinkedIn } from './Buttons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Github, LinkedIn, Medium, Email } from './Buttons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { fab } from '@fortawesome/free-brands-svg-icons';
 // import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
@@ -22,6 +22,9 @@ const styles = {
   menuButton: {
     marginLeft: -12,
     marginRight: 20
+  },
+  navTitle: {
+      color: 'white'
   }
 };
 
@@ -31,18 +34,20 @@ function Nav(props) {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
+          <Button
             className={classes.menuButton}
             color="inherit"
             aria-label="Menu"
           >
             <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" color="inherit" className={classes.grow}>
-            Ado
+          </Button>
+          <Typography variant="h5" color="inherit" className={classes.grow}>
+            <IconButton style={styles.navTitle}>Ado</IconButton>
           </Typography>
           <Github />
           <LinkedIn />
+          <Medium />
+          <Email />
         </Toolbar>
       </AppBar>
     </div>
