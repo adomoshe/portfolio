@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Github(props) {
   return (
       <IconButton
-        color="inherit"
         aria-label="Github Link"
         href="https://github.com/adomoshe"
         target="_blank"
@@ -23,7 +22,6 @@ function Github(props) {
 function LinkedIn(props) {
   return (
       <IconButton
-        color="inherit"
         aria-label="LinkedIn Link"
         href="https://www.linkedin.com/in/adoranmoshe"
         target="_blank"
@@ -41,7 +39,6 @@ function LinkedIn(props) {
 function Medium(props) {
   return (
       <IconButton
-        color="inherit"
         aria-label="LinkedIn Link"
         href="https://medium.com/@adoran.moshe"
         target="_blank"
@@ -59,7 +56,6 @@ function Medium(props) {
 function Email(props) {
   return (
       <IconButton
-        color="inherit"
         aria-label="Email Link"
         href="mailto:adoran.moshe@gmail.com"
         rel="noopener noreferrer"

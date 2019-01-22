@@ -14,8 +14,8 @@ import img3 from '../assets/img/carousel-3.jpg';
 import img4 from '../assets/img/carousel-4.jpg';
 import img5 from '../assets/img/carousel-5.jpg';
 import img6 from '../assets/img/carousel-6.jpg';
-import img7 from '../assets/img/carousel-7.jpg';
-import img8 from '../assets/img/carousel-8.jpg';
+// import img7 from '../assets/img/carousel-7.jpg';
+// import img8 from '../assets/img/carousel-8.jpg';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -43,15 +43,15 @@ const carouselSteps = [
   {
     label: '',
     imgPath: img6
-  },
-  {
-    label: '',
-    imgPath: img7
-  },
-  {
-    label: '',
-    imgPath: img8
   }
+  // {
+  //   label: '',
+  //   imgPath: img7
+  // }
+  // {
+  //   label: '',
+  //   imgPath: img8
+  // }
 ];
 
 const styles = () => ({
@@ -75,11 +75,12 @@ const styles = () => ({
     margin: '6%'
   },
   mobileStepper: {
-    width: '100%',
-    height: '100%',
+    width: '96%',
+    height: '85%',
     position: 'absolute',
     zIndex: '2',
-    background: 'transparent'
+    background: 'transparent',
+    padding: '2%'
   }
 });
 
