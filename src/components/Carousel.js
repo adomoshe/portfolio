@@ -66,12 +66,11 @@ const styles = theme => ({
     alignItems: 'center',
     height: 50,
     paddingLeft: theme.spacing.unit * 4,
-    backgroundColor: theme.palette.background.default
+    backgroundColor: 'transparent'
   },
   img: {
     height: 800,
     display: 'block',
-    maxWidth: 2000,
     overflow: 'hidden',
     width: '100%'
   }
@@ -105,15 +104,15 @@ class Carousel extends React.Component {
 
     return (
       <div className={classes.root}>
-        <Paper square elevation={0} className={classes.header}>
-          <Typography>{tutorialSteps[activeStep].label}</Typography>
-        </Paper>
         <AutoPlaySwipeableViews
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
           index={activeStep}
           onChangeIndex={this.handleStepChange}
           enableMouseEvents
         >
+          <Paper square elevation={0} className={classes.header}>
+            <Typography>Welcome to Ado's Portfolio</Typography>
+          </Paper>
           {tutorialSteps.map((step, index) => (
             <div key={step.label}>
               {Math.abs(activeStep - index) <= 2 ? (
