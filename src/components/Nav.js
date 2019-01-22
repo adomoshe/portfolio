@@ -14,7 +14,11 @@ import { Github, LinkedIn, Medium, Email } from './Buttons';
 
 const styles = {
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    zIndex: '10',
+    position: 'absolute',
+    width: '100%',
+    boxShadow: '0',
   },
   grow: {
     flexGrow: 1
@@ -22,6 +26,10 @@ const styles = {
   menuButton: {
     marginLeft: -12,
     marginRight: 20
+  },
+  appBar: {
+    background: 'transparent',
+    boxShadow: '0'
   },
   navTitle: {
       color: 'white'
@@ -32,14 +40,13 @@ function Nav(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
+      <AppBar style={styles.appBar}>
+        <Toolbar style={styles.appBar}>
           <Button
             className={classes.menuButton}
-            color="inherit"
             aria-label="Menu"
           >
-            <MenuIcon />
+            <MenuIcon style={styles.navTitle}/>
           </Button>
           <Typography variant="h5" color="inherit" className={classes.grow}>
             <IconButton style={styles.navTitle}>Ado</IconButton>
