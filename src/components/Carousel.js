@@ -1,12 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import MobileStepper from '@material-ui/core/MobileStepper';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { Component } from 'react';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from 'react-responsive-carousel';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import img1 from '../assets/img/carousel-1.jpg';
 import img2 from '../assets/img/carousel-2.jpg';
@@ -17,153 +12,97 @@ import img6 from '../assets/img/carousel-6.jpg';
 // import img7 from '../assets/img/carousel-7.jpg';
 // import img8 from '../assets/img/carousel-8.jpg';
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-
-const carouselSteps = [
+const picsArr = [
   {
-    label: '',
-    imgPath: img1
+    alt: 'scenery',
+    path: img1
   },
   {
-    label: '',
-    imgPath: img2
+    alt: 'scenery',
+    path: img2
   },
   {
-    label: '',
-    imgPath: img3
+    alt: 'scenery',
+    path: img3
   },
   {
-    label: '',
-    imgPath: img4
+    alt: 'scenery',
+    path: img4
   },
   {
-    label: '',
-    imgPath: img5
+    alt: 'scenery',
+    path: img5
   },
   {
-    label: '',
-    imgPath: img6
+    alt: 'scenery',
+    path: img6
   }
   // {
-  //   label: '',
-  //   imgPath: img7
+  //   alt: 'scenery',
+  //   path: img7
   // }
   // {
-  //   label: '',
-  //   imgPath: img8
+  //   alt: 'scenery',
+  //   path: img8
   // }
 ];
 
-const styles = () => ({
-  root: {
-    maxWidth: '100%',
-    flexGrow: 1,
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    zIndex: '1',
-    boxShadow: '0 16px 20px 0 rgba(0, 0, 0, 0.4)'
+//               <FontAwesomeIcon
+//                 icon="hand-pointer"
+//                 size="3x"
+//                 color="white"
+//                 transform={{ rotate: 90 }}
+//               />
+//               <FontAwesomeIcon
+//                 icon="hand-pointer"
+//                 size="3x"
+//                 color="white"
+//                 flip="horizontal"
+//                 transform={{ rotate: 90 }}
+//
+
+const styles = {
+  carouselDiv: {
+    boxShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)'
+  },
+  imgDiv: {
+    marginTop: 0,
+    marginLeft: 0,
+    width: '100%',
+    height: 1000
   },
   img: {
-    height: 800,
-    display: 'flex',
-    overflow: 'hidden',
-    width: '100%'
-  },
-  buttons: {
+    marginTop: 0,
+    marginLeft: 0,
+    width: '100%',
     height: '100%',
-    margin: '6%'
-  },
-  mobileStepper: {
-    width: '96%',
-    height: '85%',
-    position: 'absolute',
-    zIndex: '2',
-    background: 'transparent',
-    padding: '2%'
+    boxShadow: '0px 0px 5px 5px rgba(0,0,0,0.6)'
   }
-});
+};
 
-class Carousel extends React.Component {
-  state = {
-    activeStep: 0
-  };
 
-  handleNext = () => {
-    this.setState(prevState => ({
-      activeStep: prevState.activeState + 1
-    }));
-  };
-
-  handleBack = () => {
-    this.setState(prevState => ({
-      activeStep: prevState.activeState - 1
-    }));
-  };
-
-  handleStepChange = activeStep => {
-    this.setState({ activeStep });
-  };
-
+class PicsCarousel extends Component {
   render() {
-    const { classes } = this.props;
-    const { activeStep } = this.state;
-    const maxSteps = carouselSteps.length;
-
     return (
-      <div className={classes.root}>
-        <AutoPlaySwipeableViews
-          index={activeStep}
-          onChangeIndex={this.handleStepChange}
-          enableMouseEvents
-        >
-          {carouselSteps.map((step, index) => (
-            <div key={step.label}>
-              {Math.abs(activeStep - index) <= 2 ? (
-                <img
-                  className={classes.img}
-                  src={step.imgPath}
-                  alt={step.label}
-                />
-              ) : null}
-            </div>
-          ))}
-        </AutoPlaySwipeableViews>
-        <MobileStepper
-          steps={maxSteps}
-          activeStep={activeStep}
-          className={classes.mobileStepper}
-          style={styles.mobileStepper}
-          nextButton={
-            <Button
-              onClick={this.handleNext}
-              disabled={activeStep === maxSteps - 1}
-              style={styles.buttons}
-            >
-              <FontAwesomeIcon
-                icon="hand-point-right"
-                size="3x"
-                color="white"
-              />
-            </Button>
-          }
-          backButton={
-            <Button onClick={this.handleBack} disabled={activeStep === 0} style={styles.buttons}>
-              <FontAwesomeIcon
-                icon="hand-point-left"
-                size="3x"
-                color="white"
-              />
-            </Button>
-          }
-        />
+      <div style={styles.carouselDiv}>
+      <Carousel
+        showThumbs={false}
+        infiniteLoop={true}
+        width="100%"
+        autoPlay={true}
+        stopOnHover={false}
+        interval={7000}
+        transitionTime={800}
+      >
+      {picsArr.map((pic, index) => {
+        return (<div style={styles.imgDiv}>
+          <img src={pic.path} alt={pic.alt} key={index} style={styles.img} />
+        </div>)
+      })}
+      </Carousel>
       </div>
     );
   }
 }
 
-Carousel.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(Carousel);
+export default PicsCarousel;

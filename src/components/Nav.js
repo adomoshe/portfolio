@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import IconButton from '@material-ui/core/Button';
 import { Github, LinkedIn, Medium, Email } from './Buttons';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,7 +6,7 @@ import { Github, LinkedIn, Medium, Email } from './Buttons';
 const styles = {
   nav: {
     zIndex: '10',
-    position: 'absolute',
+    position: 'fixed',
     width: '100%',
     height: '3%',
     background: 'transparent'
@@ -17,6 +16,8 @@ const styles = {
   },
   navTitle: {
     fontSize: '2em',
+    fontFamily: "'Poiret One', cursive",
+    fontWeight: '900',
     marginTop: 0,
     marginBottom: 0,
     marginLeft: 5,
@@ -41,9 +42,5 @@ function Nav(props) {
     </navbar>
   );
 }
-
-Nav.propTypes = {
-  classes: PropTypes.object.isRequired
-};
 
 export default Nav;
