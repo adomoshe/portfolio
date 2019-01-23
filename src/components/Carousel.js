@@ -75,31 +75,37 @@ const styles = {
     marginTop: 0,
     marginLeft: 0,
     width: '100%',
-    height: '100%',
-    boxShadow: '0px 0px 5px 5px rgba(0,0,0,0.6)'
+    height: '100%'
   }
 };
-
 
 class PicsCarousel extends Component {
   render() {
     return (
       <div style={styles.carouselDiv}>
-      <Carousel
-        showThumbs={false}
-        infiniteLoop={true}
-        width="100%"
-        autoPlay={true}
-        stopOnHover={false}
-        interval={7000}
-        transitionTime={800}
-      >
-      {picsArr.map((pic, index) => {
-        return (<div style={styles.imgDiv}>
-          <img src={pic.path} alt={pic.alt} key={index} style={styles.img} />
-        </div>)
-      })}
-      </Carousel>
+        <Carousel
+          showStatus={false}
+          showThumbs={false}
+          infiniteLoop={true}
+          width="100%"
+          autoPlay={true}
+          stopOnHover={false}
+          interval={7000}
+          transitionTime={800}
+        >
+          {picsArr.map((pic, index) => {
+            return (
+              <div style={styles.imgDiv}>
+                <img
+                  src={pic.path}
+                  alt={pic.alt}
+                  key={index}
+                  style={styles.img}
+                />
+              </div>
+            );
+          })}
+        </Carousel>
       </div>
     );
   }

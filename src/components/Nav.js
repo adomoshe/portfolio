@@ -8,8 +8,9 @@ const styles = {
     zIndex: '10',
     position: 'fixed',
     width: '100%',
-    height: '3%',
-    background: 'transparent'
+    paddingLeft: 20,
+    paddingRight: 20
+    // background: 'transparent'
   },
   navBtns: {
     float: 'right'

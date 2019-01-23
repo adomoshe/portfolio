@@ -1,0 +1,49 @@
+import React from 'react';
+
+const styles = {
+  rootDiv: {
+    margin: 25
+  },
+  title: {
+    // fontShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
+    fontSize: '4em',
+    fontFamily: "'Poiret One', cursive",
+    fontWeight: '900',
+    margin: 20
+  },
+  p: {
+    fontSize: '2em',
+    fontFamily: "'Poiret One', cursive",
+    fontWeight: '600'
+  }
+};
+
+function Projects(props) {
+  return (
+    <div style={styles.rootDiv}>
+      <div class="row">
+        <div class="col-4">
+          <h1 style={styles.title}>Projects</h1>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-10">
+          <p style={styles.p}>
+            Untrending: Express.js | MySQL | Github:
+            github.com/adomoshe/untrending <br />Full-stack news app that displays
+            similar stories from news sources opposite to what the user would
+            typically browse, broadening people's perspectives. <br/>JavaScript,
+            Node.js, Heroku, Sequelize.js, MySQL, Express.js, Passport.js,
+            Authentication, NewsAPI, HTML, CSS, jQuery, Bootstrap <br/><br/>Nosh:
+            JavaScript | APIs | Github: github.com/adomoshe/nosh<br/>Recipe
+            searching interface filtering Yummly API results based on user query
+            by dish or by ingredients <br/>JavaScript, Yummly APIs, HTML, CSS,
+            jQuery, Bootstrap
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Projects;
