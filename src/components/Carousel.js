@@ -3,49 +3,16 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import img1 from '../assets/img/carousel-1.jpg';
-import img2 from '../assets/img/carousel-2.jpg';
-import img3 from '../assets/img/carousel-3.jpg';
-import img4 from '../assets/img/carousel-4.jpg';
-import img5 from '../assets/img/carousel-5.jpg';
-import img6 from '../assets/img/carousel-6.jpg';
-// import img7 from '../assets/img/carousel-7.jpg';
-// import img8 from '../assets/img/carousel-8.jpg';
+import img1 from '../assets/img/carousel/carousel-1.jpg';
+import img2 from '../assets/img/carousel/carousel-2.jpg';
+import img3 from '../assets/img/carousel/carousel-3.jpg';
+import img4 from '../assets/img/carousel/carousel-4.jpg';
+import img5 from '../assets/img/carousel/carousel-5.jpg';
+import img6 from '../assets/img/carousel/carousel-6.jpg';
+// import img7 from '../assets/img/carousel/carousel-7.jpg';
+// import img8 from '../assets/img/carousel/carousel-8.jpg';
 
-const picsArr = [
-  {
-    alt: 'scenery',
-    path: img1
-  },
-  {
-    alt: 'scenery',
-    path: img2
-  },
-  {
-    alt: 'scenery',
-    path: img3
-  },
-  {
-    alt: 'scenery',
-    path: img4
-  },
-  {
-    alt: 'scenery',
-    path: img5
-  },
-  {
-    alt: 'scenery',
-    path: img6
-  }
-  // {
-  //   alt: 'scenery',
-  //   path: img7
-  // }
-  // {
-  //   alt: 'scenery',
-  //   path: img8
-  // }
-];
+const picsArr = [img1, img2, img3, img4, img5, img6];
 
 //               <FontAwesomeIcon
 //                 icon="hand-pointer"
@@ -81,7 +48,7 @@ const styles = {
   }
 };
 
-class PicsCarousel extends Component {
+class MainCarousel extends Component {
   render() {
     return (
       <div style={styles.carouselDiv}>
@@ -98,12 +65,7 @@ class PicsCarousel extends Component {
           {picsArr.map((pic, index) => {
             return (
               <div style={styles.imgDiv}>
-                <img
-                  src={pic.path}
-                  alt={pic.alt}
-                  key={index}
-                  style={styles.img}
-                />
+                <img src={pic} alt="scenery" key={index} style={styles.img} />
               </div>
             );
           })}
@@ -113,4 +75,4 @@ class PicsCarousel extends Component {
   }
 }
 
-export default PicsCarousel;
+export default MainCarousel;

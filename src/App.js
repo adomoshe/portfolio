@@ -8,7 +8,7 @@ import {
   faArrowRight
 } from '@fortawesome/free-solid-svg-icons';
 import Nav from './components/Nav';
-import AdoCarousel from './components/Carousel';
+import MainCarousel from './components/Carousel';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
@@ -24,7 +24,7 @@ class App extends Component {
       <div className="App">
         <div class="container-fluid">
           <Nav />
-          <AdoCarousel />
+          <MainCarousel />
           <About />
           <Skills />
           <Projects />

@@ -34,10 +34,12 @@ function Education(props) {
             Intensive 3.5 month full-stack web development bootcamp taught on
             location at UC Berkeley
             <br />
+            <br />
             University of Tampa, FL, 2014-2017
             <br />
             Graduated in 3 years earning a 3.73 GPA with an International
             Business Management degree and a minor in Economics
+            <br />
             <br />
             Universitat Autònoma de Barcelona, Spain, Jan - April '16
           </p>
