@@ -8,8 +8,8 @@ const styles = {
     zIndex: '10',
     position: 'fixed',
     width: '100%',
-    paddingLeft: 20,
-    paddingRight: 20
+    // paddingLeft: 20,
+    paddingRight: '2vh'
     // background: 'transparent'
   },
   navBtns: {

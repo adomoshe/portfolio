@@ -6,13 +6,13 @@ const styles = {
   },
   title: {
     // fontShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
-    fontSize: '4em',
+    fontSize: '3em',
     fontFamily: "'Poiret One', cursive",
     fontWeight: '900',
     margin: 20
   },
   p: {
-    fontSize: '2em',
+    fontSize: '1.5em',
     fontFamily: "'Poiret One', cursive",
     fontWeight: '600'
   }
