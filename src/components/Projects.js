@@ -29,14 +29,23 @@ function Projects(props) {
       <div class="row justify-content-center">
         <div class="col-10">
           <p style={styles.p}>
-            Untrending: Express.js | MySQL |&nbsp;
+            Untrending:&nbsp;
             <a
               aria-label="Github Repo"
-              href="github.com/adomoshe/untrending"
+              href="https://github.com/adomoshe/untrending"
               target="_blank"
               rel="noopener noreferrer"
             >
               Github Repo
+            </a>
+            &nbsp;|&nbsp;
+            <a
+              aria-label="Link"
+              href="https://untrending.herokuapp.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Deployed
             </a>
             <br />
             Full-stack news app that displays similar stories from news sources
@@ -49,13 +58,13 @@ function Projects(props) {
             Nosh:&nbsp;
             <a
               aria-label="Github Repo"
-              href="github.com/adomoshe/nosh"
+              href="https://github.com/adomoshe/nosh"
               target="_blank"
               rel="noopener noreferrer"
             >
               Github Repo
             </a>
-            |
+            &nbsp;|&nbsp;
             <a
               aria-label="Link"
               href="https://adomoshe.github.io/nosh/"
