@@ -12,6 +12,11 @@ const styles = {
     fontWeight: '900',
     margin: 20
   },
+  projectTitle: {
+    fontSize: '2em',
+    fontFamily: "'Poiret One', cursive",
+    fontWeight: '600'
+  },
   p: {
     fontSize: '1.5em',
     fontFamily: "'Poiret One', cursive",
@@ -29,60 +34,59 @@ function Projects(props) {
       </div>
       <div class="row justify-content-center">
         <div class="col-10">
-          
           <ProjCarousel />
           <br />
-            Untrending:&nbsp;
-            <a
-              aria-label="Github Repo"
-              href="https://github.com/adomoshe/untrending"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Github Repo
-            </a>
-            &nbsp;|&nbsp;
-            <a
-              aria-label="Link"
-              href="https://untrending.herokuapp.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Deployed
-            </a>
-            <br />
-            <p style={styles.p}>
+          <h2 style={styles.projectTitle}>Untrending:</h2>
+          <p style={styles.p}>
+          <a
+            aria-label="Github Repo"
+            href="https://github.com/adomoshe/untrending"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Github Repo
+          </a>
+          &nbsp;|&nbsp;
+          <a
+            aria-label="Link"
+            href="https://untrending.herokuapp.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Deployed
+          </a>
+          <br />
             Full-stack news app that displays similar stories from news sources
             opposite to what the user would typically browse, broadening
             people's perspectives. <br />
             JavaScript, Node.js, Heroku, Sequelize.js, MySQL, Express.js,
             Passport.js, Authentication, NewsAPI, HTML, CSS, jQuery, Bootstrap
-            </p>
-            <br />
-            <br />
-            <br />
-            <ProjCarousel />
-            <br />
-            Nosh:&nbsp;
-            <a
-              aria-label="Github Repo"
-              href="https://github.com/adomoshe/nosh"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Github Repo
-            </a>
-            &nbsp;|&nbsp;
-            <a
-              aria-label="Link"
-              href="https://adomoshe.github.io/nosh/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Deployed
-            </a>
-            <br />
-            <p style={styles.p}>
+          </p>
+          <br />
+          <br />
+          <br />
+          <ProjCarousel />
+          <br />
+          <h2 style={styles.projectTitle}>Nosh:</h2> 
+          <p style={styles.p}>
+          <a
+            aria-label="Github Repo"
+            href="https://github.com/adomoshe/nosh"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Github Repo
+          </a>
+          &nbsp;|&nbsp;
+          <a
+            aria-label="Link"
+            href="https://adomoshe.github.io/nosh/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Deployed
+          </a>
+          <br />
             Recipe searching interface filtering Yummly API results based on
             user query by dish or by ingredients <br />
             JavaScript, Yummly APIs, HTML, CSS, jQuery, Bootstrap

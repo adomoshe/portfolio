@@ -8,23 +8,22 @@ const styles = {
     zIndex: '10',
     position: 'fixed',
     width: '100%',
-    // paddingLeft: 20,
-    paddingRight: '2vh'
-    // background: 'transparent'
+    marginTop: 0,
+    marginLeft: 0,
+    paddingRight: '3vh'
   },
   navBtns: {
     float: 'right'
   },
   navTitle: {
+    float: 'left',
     fontSize: '2em',
     fontFamily: "'Poiret One', cursive",
     fontWeight: '900',
     marginTop: 0,
     marginBottom: 0,
-    marginLeft: 5,
     padding: 0,
     color: 'white',
-    float: 'left'
   }
 };
 

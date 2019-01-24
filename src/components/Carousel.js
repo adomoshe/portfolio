@@ -31,7 +31,7 @@ const picsArr = [img1, img2, img3, img4, img5, img6];
 const styles = {
   carouselDiv: {
     boxShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
-    marginTop: 15,
+    marginTop: '1.5vh',
     height: '85vh'
   },
   imgDiv: {
