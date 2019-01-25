@@ -32,14 +32,21 @@ const styles = {
   carouselDiv: {
     boxShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
     marginTop: '1.5vh',
-    height: '85vh',
+    height: '43vw',
+    borderRadius: 10
+  },
+  carousel: {
+    marginTop: 0,
+    marginLeft: 0,
+    width: '100%',
+    height: '43vw',
     borderRadius: 10
   },
   imgDiv: {
     marginTop: 0,
     marginLeft: 0,
     width: '100%',
-    height: '85vh',
+    height: '43vw',
     borderRadius: 10
   },
   img: {
@@ -48,7 +55,6 @@ const styles = {
     width: '100%',
     height: '100%',
     borderRadius: 10
-
   }
 };
 
@@ -65,6 +71,7 @@ class MainCarousel extends Component {
           stopOnHover={false}
           interval={7000}
           transitionTime={800}
+          style={styles.carousel}
         >
           {picsArr.map((pic, index) => {
             return (

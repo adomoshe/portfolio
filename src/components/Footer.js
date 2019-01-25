@@ -4,6 +4,8 @@ const styles = {
   rootDiv: {
     boxShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
     position: 'relative',
+    marginLeft: 0,
+    marginRight: 0,
     marginBottom: '1.5vh',
     borderRadius: 10
   },
@@ -12,7 +14,7 @@ const styles = {
     fontSize: '3em',
     fontFamily: "'Poiret One', cursive",
     fontWeight: '900',
-    margin: 20
+    margin: '2vw'
   },
   p: {
     fontSize: '1.5em',

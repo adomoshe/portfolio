@@ -26,13 +26,12 @@ const backSkillsArr = [
 
 const styles = {
   rootDiv: {
-    margin: 25
   },
   title: {
     fontSize: '3em',
     fontFamily: "'Poiret One', cursive",
     fontWeight: '900',
-    margin: 20
+    margin: '2vw'
   },
   section: {
     fontSize: '2em',
@@ -56,12 +55,12 @@ function Skills(props) {
   return (
     <div style={styles.rootDiv}>
       <div class="row">
-        <div class="col-4">
+        <div class="col-12">
           <h1 style={styles.title}>Technical Skills</h1>
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-4" align='center'>
+        <div class="col-6" >
         <h3 style={styles.section}>Front</h3>
           <ul>
             {frontSkillsArr.map((skill, index) => {
@@ -74,7 +73,7 @@ function Skills(props) {
             })}
           </ul>
           </div>
-          <div class="col-6" align='center'>
+          <div class="col-6" >
           <h3 style={styles.section}>Back</h3>
           <ul>
             {backSkillsArr.map((skill, index) => {

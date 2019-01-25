@@ -2,14 +2,13 @@ import React from 'react';
 
 const styles = {
   rootDiv: {
-    margin: 25
   },
   title: {
     // fontShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
     fontSize: '3em',
     fontFamily: "'Poiret One', cursive",
     fontWeight: '900',
-    margin: 20
+    margin: '2vw'
   },
   p: {
     fontSize: '1.5em',
@@ -22,7 +21,7 @@ function Experience(props) {
   return (
     <div style={styles.rootDiv}>
       <div class="row">
-        <div class="col-4">
+        <div class="col-12">
           <h1 style={styles.title}>Experience</h1>
         </div>
       </div>
