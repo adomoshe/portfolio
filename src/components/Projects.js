@@ -1,6 +1,13 @@
 import React from 'react';
 import ProjCarousel from './ProjCarousel';
 
+import img1 from '../assets/img/nosh/1.png';
+import img2 from '../assets/img/nosh/2.png';
+import img3 from '../assets/img/nosh/3.png';
+import img4 from '../assets/img/nosh/4.png';
+
+const noshPicsArr = [img1, img2, img3, img4];
+
 const styles = {
   rootDiv: {},
   title: {
@@ -71,7 +78,7 @@ function Projects(props) {
           <br />
           <br />
           <br />
-          <ProjCarousel />
+          <ProjCarousel pics={noshPicsArr} />
           <br />
           <h2 style={styles.projectTitle}>Nosh:</h2>
             <a

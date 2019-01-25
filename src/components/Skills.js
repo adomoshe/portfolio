@@ -51,7 +51,7 @@ const styles = {
   }
 };
 
-function Skills(props) {
+const Skills = (props) => {
   return (
     <div style={styles.rootDiv}>
       <div class="row">

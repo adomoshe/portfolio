@@ -2,13 +2,6 @@ import React, { Component } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
-import img1 from '../assets/img/nosh/1.png';
-import img2 from '../assets/img/nosh/2.png';
-import img3 from '../assets/img/nosh/3.png';
-import img4 from '../assets/img/nosh/4.png';
-
-const picsArr = [img1, img2, img3, img4];
-
 const styles = {
   carouselDiv: {
     boxShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
@@ -30,7 +23,9 @@ const styles = {
 };
 
 class ProjCarousel extends Component {
+
   render() {
+    const picsArr = this.props.pics;
     return (
       <div style={styles.carouselDiv}>
         <Carousel
