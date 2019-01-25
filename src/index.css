@@ -8,3 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+footer {
+  background-image: url('./assets/img/backgrounds/noisy-footer.png');
+}
