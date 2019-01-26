@@ -21,7 +21,9 @@ const Education = () => {
       <div class="row justify-content-center">
         <div class="col-10">
           <p style={styles.p}>
-            University of California, Berkeley Extension, CA 2018-2019
+            University of California, Berkeley Extension, CA
+            <br />
+            2018-2019
             <ul>
               <ListItem>
                 Intensive 3.5 month full-stack web development bootcamp taught
@@ -29,7 +31,9 @@ const Education = () => {
               </ListItem>
             </ul>
             <br />
-            University of Tampa, FL, 2014-2017
+            University of Tampa, FL
+            <br />
+            2014-2017
             <ul>
               <ListItem>
                 Graduated in 3 years earning a 3.73 GPA with an International
@@ -37,7 +41,15 @@ const Education = () => {
               </ListItem>
             </ul>
             <br />
-            Universitat Autònoma de Barcelona, Spain, Jan - April '16
+            Universitat Autònoma de Barcelona, Spain
+            <br />
+            Jan - April '16
+            <ul>
+              <ListItem>
+                Study Abroad - Enrolled in multiple economics courses, learning first hand
+                about EU policies and their economic implications
+              </ListItem>
+            </ul>
           </p>
         </div>
       </div>
