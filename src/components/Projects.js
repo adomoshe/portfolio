@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjCarousel from './ProjCarousel';
+import { Title } from './StyledTags';
 
 import img1 from '../assets/img/nosh/1.png';
 import img2 from '../assets/img/nosh/2.png';
@@ -10,38 +11,23 @@ const noshPicsArr = [img1, img2, img3, img4];
 
 const styles = {
   rootDiv: {},
-  title: {
-    // fontShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
-    fontSize: '3em',
-    fontFamily: "'Poiret One', cursive",
-    fontWeight: '900',
-    margin: '2vw'
-  },
   projectTitle: {
-    fontSize: '2em',
-    fontFamily: "'Poiret One', cursive",
+    fontSize: '2rem',
     fontWeight: '600'
   },
   links: {
-    fontSize: '1.5em',
-    fontFamily: "'Poiret One', cursive",
+    fontSize: '1.5rem',
     fontWeight: '600'
     // float: 'left'
   },
-  p: {
-    fontSize: '1.5em',
-    fontFamily: "'Poiret One', cursive",
-    fontWeight: '600'
-  }
+  p: {}
 };
 
 const Projects = () => {
   return (
     <div style={styles.rootDiv}>
       <div class="row">
-        <div class="col-12">
-          <h1 style={styles.title}>Projects</h1>
-        </div>
+        <Title>Projects</Title>
       </div>
       <div class="row justify-content-center">
         <div class="col-10">

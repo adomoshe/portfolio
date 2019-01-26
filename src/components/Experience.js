@@ -1,19 +1,18 @@
 import React from 'react';
+import { Title, ListItem } from './StyledTags';
 
 const styles = {
-  rootDiv: {
-  },
+  rootDiv: {},
   title: {
     // fontShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
-    fontSize: '3em',
-    fontFamily: "'Poiret One', cursive",
+    fontSize: '3rem',
     fontWeight: '900',
     margin: '2vw'
   },
-  p: {
-    fontSize: '1.5em',
-    fontFamily: "'Poiret One', cursive",
-    fontWeight: '600'
+  p: {},
+  li: {
+    listStyleType: 'none',
+    marginLeft: '-1vw'
   }
 };
 
@@ -21,26 +20,31 @@ const Experience = () => {
   return (
     <div style={styles.rootDiv}>
       <div class="row">
-        <div class="col-12">
-          <h1 style={styles.title}>Experience</h1>
-        </div>
+        <Title>Experience</Title>
       </div>
       <div class="row justify-content-center">
         <div class="col-10">
           <p style={styles.p}>
-            IT Recruiter, Sep '17 - Feb ’18 Kforce - San Ramon, CA
+            IT Recruiter - KForce
             <br />
-            Quickly familiarized with IT structure and terminology, gathering a
-            strong understanding of the field
-            <br />
-            Focus on building deep relationships with dozens of senior IT
-            professionals monthly to match their needs and interests for
-            available roles at Fortune 500 companies in the SF Bay Area
+            Sep '17 - Feb ’18, San Ramon, CA
+            <ul>
+              <ListItem>
+                Quickly familiarized with IT structure and terminology,
+                gathering a strong understanding of the field
+              </ListItem>
+              <ListItem>
+                Focus on building deep relationships with dozens of senior IT
+                professionals monthly to match their needs and interests for
+                available roles at Fortune 500 companies in the SF Bay Area
+              </ListItem>
+            </ul>
           </p>
+          <br />
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Experience;

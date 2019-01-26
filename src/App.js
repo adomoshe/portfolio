@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import {
   faAt,
   faHandPointer,
-  faArrowRight
+  faArrowRight,
+  faCode
 } from '@fortawesome/free-solid-svg-icons';
 import Nav from './components/Nav';
 import MainCarousel from './components/Carousel';
@@ -16,9 +18,7 @@ import Education from './components/Education';
 import Experience from './components/Experience';
 import Footer from './components/Footer';
 
-
-
-library.add(fab, faAt, faHandPointer, faArrowRight);
+library.add(fab, faAt, faHandPointer, faArrowRight, faCode);
 
 class App extends Component {
   render() {

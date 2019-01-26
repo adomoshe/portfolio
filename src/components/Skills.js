@@ -1,5 +1,5 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Title, ListItem } from './StyledTags';
 
 const frontSkillsArr = [
   'React.js',
@@ -25,70 +25,40 @@ const backSkillsArr = [
 ];
 
 const styles = {
-  rootDiv: {
-  },
-  title: {
-    fontSize: '3em',
-    fontFamily: "'Poiret One', cursive",
-    fontWeight: '900',
-    margin: '2vw'
-  },
+  rootDiv: {},
   section: {
-    fontSize: '2em',
-    fontFamily: "'Poiret One', cursive",
-    fontWeight: '900',
+    fontSize: '2rem',
+    fontWeight: '900'
   },
-  li: {
-    listStyleType: 'none',
-    fontSize: '1.5em',
-    fontFamily: "'Poiret One', cursive",
-    fontWeight: '600'
-  },
-  p: {
-    fontSize: '1.5em',
-    fontFamily: "'Poiret One', cursive",
-    fontWeight: '600'
-  }
+  p: {}
 };
 
 const Skills = () => {
   return (
     <div style={styles.rootDiv}>
       <div class="row">
-        <div class="col-12">
-          <h1 style={styles.title}>Technical Skills</h1>
-        </div>
+        <Title>Technical Skills</Title>
       </div>
       <div class="row justify-content-center">
-        <div class="col-6" >
-        <h3 style={styles.section}>Front</h3>
+        <div class="col-6">
+          <h3 style={styles.section}>Front</h3>
           <ul>
             {frontSkillsArr.map((skill, index) => {
-              return (
-                <li key={index} style={styles.li}>
-                  <FontAwesomeIcon icon='arrow-right' />&ensp;
-                  {skill}
-                </li>
-              );
+              return <ListItem key={index}>{skill}</ListItem>;
             })}
           </ul>
-          </div>
-          <div class="col-6" >
+        </div>
+        <div class="col-6">
           <h3 style={styles.section}>Back</h3>
           <ul>
             {backSkillsArr.map((skill, index) => {
-              return (
-                <li key={index} style={styles.li}>
-                <FontAwesomeIcon icon='arrow-right' />&ensp;
-                  {skill}
-                </li>
-              );
+              return <ListItem key={index}>{skill}</ListItem>;
             })}
           </ul>
-          </div>
         </div>
       </div>
+    </div>
   );
-}
+};
 
 export default Skills;

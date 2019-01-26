@@ -1,29 +1,16 @@
 import React from 'react';
+import { Title } from './StyledTags';
 
 const styles = {
-  rootDiv: {
-  },
-  title: {
-    // fontShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
-    fontSize: '3em',
-    fontFamily: "'Poiret One', cursive",
-    fontWeight: '900',
-    margin: '2vw'
-  },
-  p: {
-    fontSize: '1.5em',
-    fontFamily: "'Poiret One', cursive",
-    fontWeight: '600'
-  }
+  rootDiv: {},
+  p: {}
 };
 
 const About = () => {
   return (
     <div style={styles.rootDiv}>
       <div class="row">
-        <div class="col-12">
-          <h1 style={styles.title}>Adoran Moshe</h1>
-        </div>
+        <Title>Adoran Moshe</Title>
       </div>
       <div class="row justify-content-center">
         <div class="col-10">
@@ -40,6 +27,6 @@ const About = () => {
       </div>
     </div>
   );
-}
+};
 
 export default About;

@@ -29,7 +29,7 @@ const styles = {
 
 const Nav = () => {
   return (
-    <navbar style={styles.nav}>
+    <nav style={styles.nav}>
       <IconButton aria-label="Homepage Link">
         <h3 style={styles.navTitle}>Ado</h3>
       </IconButton>
@@ -39,7 +39,7 @@ const Nav = () => {
         <Medium />
         <Email />
       </span>
-    </navbar>
+    </nav>
   );
 }
 

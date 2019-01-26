@@ -1,6 +1,6 @@
 import React from 'react';
-import reactSVG from '../react.svg';
-
+import { Source } from './Buttons';
+import { Title } from './StyledTags';
 
 const styles = {
   rootDiv: {
@@ -12,16 +12,13 @@ const styles = {
     borderRadius: 10
   },
   title: {
-    // fontShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
-    fontSize: '3em',
-    fontFamily: "'Poiret One', cursive",
-    fontWeight: '900',
-    margin: '2vw'
+    marginBottom: 0
   },
   p: {
-    fontSize: '1.5em',
-    fontFamily: "'Poiret One', cursive",
-    fontWeight: '600'
+    color: 'white'
+  },
+  links: {
+    color: 'white'
   }
 };
 
@@ -29,20 +26,27 @@ const Footer = () => {
   return (
     <footer style={styles.rootDiv}>
       <div class="row">
-        <div class="col-4">
-          <h1 style={styles.title}>"Footer"</h1>
-        </div>
+        <Title style={styles.title}>"Footer"</Title>
       </div>
       <div class="row justify-content-center">
-        <div class="col-10 content-justify-center" align='center'>
-        <img src={reactSVG} class="react-svg" alt="react SVG" />
+        <div class="col-10 content-justify-center" align="center">
+          <Source />
           <p style={styles.p}>
-            Footer
+            Source code <br />
+            <a
+              aria-label="Github Link"
+              href="https://www.linkedin.com/in/niki-moshe-3b038b4/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={styles.links}
+            >
+              Images thanks to Niki Moshe
+            </a>
           </p>
         </div>
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;
