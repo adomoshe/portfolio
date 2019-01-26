@@ -17,7 +17,7 @@ const styles = {
   }
 };
 
-function Experience(props) {
+const Experience = () => {
   return (
     <div style={styles.rootDiv}>
       <div class="row">

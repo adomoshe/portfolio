@@ -35,7 +35,7 @@ const styles = {
   }
 };
 
-function Projects(props) {
+const Projects = () => {
   return (
     <div style={styles.rootDiv}>
       <div class="row">

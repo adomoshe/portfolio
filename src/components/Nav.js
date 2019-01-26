@@ -27,7 +27,7 @@ const styles = {
   }
 };
 
-function Nav(props) {
+const Nav = () => {
   return (
     <navbar style={styles.nav}>
       <IconButton aria-label="Homepage Link">

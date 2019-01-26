@@ -17,7 +17,7 @@ const styles = {
   }
 };
 
-function About(props) {
+const About = () => {
   return (
     <div style={styles.rootDiv}>
       <div class="row">

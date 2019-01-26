@@ -2,7 +2,7 @@ import React from 'react';
 import IconButton from '@material-ui/core/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function Github(props) {
+const Github = () => {
   return (
       <IconButton
         aria-label="Github Link"
@@ -19,7 +19,7 @@ function Github(props) {
   );
 }
 
-function LinkedIn(props) {
+const LinkedIn = () => {
   return (
       <IconButton
         aria-label="LinkedIn Link"
@@ -36,7 +36,7 @@ function LinkedIn(props) {
   );
 }
 
-function Medium(props) {
+const Medium = () => {
   return (
       <IconButton
         aria-label="LinkedIn Link"
@@ -53,7 +53,7 @@ function Medium(props) {
   );
 }
 
-function Email(props) {
+const Email = () => {
   return (
       <IconButton
         aria-label="Email Link"

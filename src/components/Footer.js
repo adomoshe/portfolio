@@ -1,4 +1,6 @@
 import React from 'react';
+import reactSVG from '../react.svg';
+
 
 const styles = {
   rootDiv: {
@@ -23,16 +25,17 @@ const styles = {
   }
 };
 
-function Footer(props) {
+const Footer = () => {
   return (
     <footer style={styles.rootDiv}>
       <div class="row">
         <div class="col-4">
-          <h1 style={styles.title}>Footer</h1>
+          <h1 style={styles.title}>"Footer"</h1>
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-10">
+        <div class="col-10 content-justify-center" align='center'>
+        <img src={reactSVG} class="react-svg" alt="react SVG" />
           <p style={styles.p}>
             Footer
           </p>

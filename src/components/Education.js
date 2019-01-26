@@ -17,7 +17,7 @@ const styles = {
   }
 };
 
-function Education(props) {
+const Education = () => {
   return (
     <div style={styles.rootDiv}>
       <div class="row">

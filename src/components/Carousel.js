@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -18,7 +18,22 @@ import img12 from '../assets/img/carousel/12.jpg';
 import img13 from '../assets/img/carousel/13.jpg';
 import img14 from '../assets/img/carousel/14.jpg';
 
-const picsArr = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14];
+const picsArr = [
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img7,
+  img8,
+  img9,
+  img10,
+  img11,
+  img12,
+  img13,
+  img14
+];
 
 //               <FontAwesomeIcon
 //                 icon="hand-pointer"
@@ -38,58 +53,56 @@ const styles = {
   carouselDiv: {
     boxShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
     marginTop: '1.5vh',
-    height: '43vw',
+    height: '43vw'
     // borderRadius: 10
   },
   carousel: {
     marginTop: 0,
     marginLeft: 0,
     width: '100%',
-    height: '43vw',
+    height: '43vw'
     // borderRadius: 10
   },
   imgDiv: {
     marginTop: 0,
     marginLeft: 0,
     width: '100%',
-    height: '43vw',
+    height: '43vw'
     // borderRadius: 10
   },
   img: {
     marginTop: 0,
     marginLeft: 0,
     width: '100%',
-    height: '100%',
+    height: '100%'
     // borderRadius: 10
   }
 };
 
-class MainCarousel extends Component {
-  render() {
-    return (
-      <div style={styles.carouselDiv}>
-        <Carousel
-          showStatus={false}
-          showThumbs={false}
-          infiniteLoop={true}
-          width="100%"
-          autoPlay={true}
-          stopOnHover={false}
-          interval={7000}
-          transitionTime={800}
-          style={styles.carousel}
-        >
-          {picsArr.map((pic, index) => {
-            return (
-              <div style={styles.imgDiv}>
-                <img src={pic} alt="scenery" key={index} style={styles.img} />
-              </div>
-            );
-          })}
-        </Carousel>
-      </div>
-    );
-  }
-}
+const MainCarousel = () => {
+  return (
+    <div style={styles.carouselDiv}>
+      <Carousel
+        showStatus={false}
+        showThumbs={false}
+        infiniteLoop={true}
+        width="100%"
+        autoPlay={true}
+        stopOnHover={false}
+        interval={7000}
+        transitionTime={800}
+        style={styles.carousel}
+      >
+        {picsArr.map((pic, index) => {
+          return (
+            <div style={styles.imgDiv}>
+              <img src={pic} alt="scenery" key={index} style={styles.img} />
+            </div>
+          );
+        })}
+      </Carousel>
+    </div>
+  );
+};
 
 export default MainCarousel;
