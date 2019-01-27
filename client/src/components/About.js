@@ -9,11 +9,11 @@ const styles = {
 const About = () => {
   return (
     <div style={styles.rootDiv}>
-      <div class="row">
+      <div className="row">
         <Title>Adoran Moshe</Title>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-10">
+      <div className="row justify-content-center">
+        <div className="col-10">
           <p style={styles.p}>
             Full-stack web developer with experience in IT recruiting. Developed
             an interest in web development while recruiting in the field,

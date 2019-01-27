@@ -26,11 +26,11 @@ const styles = {
 const Projects = () => {
   return (
     <div style={styles.rootDiv}>
-      <div class="row">
+      <div className="row">
         <Title>Projects</Title>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-10">
+      <div className="row justify-content-center">
+        <div className="col-10">
           <ProjCarousel />
           <br />
           <h2 style={styles.projectTitle}>Untrending:</h2>

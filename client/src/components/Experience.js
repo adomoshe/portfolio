@@ -19,11 +19,11 @@ const styles = {
 const Experience = () => {
   return (
     <div style={styles.rootDiv}>
-      <div class="row">
+      <div className="row">
         <Title>Experience</Title>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-10">
+      <div className="row justify-content-center">
+        <div className="col-10">
           <p style={styles.p}>
             IT Recruiter - KForce
             <br />

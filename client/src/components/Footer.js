@@ -25,11 +25,11 @@ const styles = {
 const Footer = () => {
   return (
     <footer style={styles.rootDiv}>
-      <div class="row">
+      <div className="row">
         <Title style={styles.title}>"Footer"</Title>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-10 content-justify-center" align="center">
+      <div className="row justify-content-center">
+        <div className="col-10 content-justify-center" align="center">
           <Source />
           <p style={styles.p}>
             Source code <br />

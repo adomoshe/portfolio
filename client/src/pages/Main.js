@@ -1,13 +1,5 @@
-import React from 'react';
-import '../assets/css/Main.css';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-import {
-  faAt,
-  faHandPointer,
-  faArrowRight,
-  faCode
-} from '@fortawesome/free-solid-svg-icons';
+import React, { Component } from 'react';
+
 import Nav from '../components/Nav';
 import MainCarousel from '../components/Carousel';
 import About from '../components/About';
@@ -17,11 +9,14 @@ import Education from '../components/Education';
 import Experience from '../components/Experience';
 import Footer from '../components/Footer';
 
-library.add(fab, faAt, faHandPointer, faArrowRight, faCode);
+class Main extends Component {
+  componentWillMount() {
+    require('../assets/css/Main.css')
+  }
 
-const Main = () => {
-  return (
-      <div class="container-fluid">
+  render() {
+    return (
+      <div className="container-fluid">
         <Nav />
         <MainCarousel />
         <About />
@@ -31,7 +26,8 @@ const Main = () => {
         <Experience />
         <Footer />
       </div>
-  );
-};
+    );
+  }
+}
 
 export default Main;

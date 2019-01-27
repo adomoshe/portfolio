@@ -15,11 +15,11 @@ const styles = {
 const Education = () => {
   return (
     <div style={styles.rootDiv}>
-      <div class="row">
+      <div className="row">
         <Title>Education</Title>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-10">
+      <div className="row justify-content-center">
+        <div className="col-10">
           <p style={styles.p}>
             University of California, Berkeley Extension, CA
             <br />

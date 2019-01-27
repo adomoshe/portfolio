@@ -62,7 +62,7 @@ const Source = () => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img src={reactSVG} class="react-svg" alt="react SVG" />
+      <img src={reactSVG} className="react-svg" alt="react SVG" />
     </IconButton>
   );
 };

@@ -36,11 +36,11 @@ const styles = {
 const Skills = () => {
   return (
     <div style={styles.rootDiv}>
-      <div class="row">
+      <div className="row">
         <Title>Technical Skills</Title>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-6">
+      <div className="row justify-content-center">
+        <div className="col-6">
           <h3 style={styles.section}>Front</h3>
           <ul>
             {frontSkillsArr.map((skill, index) => {
@@ -48,7 +48,7 @@ const Skills = () => {
             })}
           </ul>
         </div>
-        <div class="col-6">
+        <div className="col-6">
           <h3 style={styles.section}>Back</h3>
           <ul>
             {backSkillsArr.map((skill, index) => {

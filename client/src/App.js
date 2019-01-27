@@ -3,6 +3,17 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Main from './pages/Main';
 import Hangman from './pages/games/Hangman';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import {
+  faAt,
+  faHandPointer,
+  faArrowRight,
+  faCode
+} from '@fortawesome/free-solid-svg-icons';
+
+library.add(fab, faAt, faHandPointer, faArrowRight, faCode);
+
 class App extends Component {
   render() {
     return (
