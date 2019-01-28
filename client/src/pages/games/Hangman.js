@@ -28,7 +28,7 @@ class Hangman extends Component {
   ];
 
   componentWillMount() {
-    require( '../../assets/css/Hangman.css')
+    require('../../assets/css/Hangman.css')
   }
 
   componentDidMount() {
