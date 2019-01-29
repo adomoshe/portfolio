@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import bg from './pulpfiction.jpg';
 
 const styles = {
   body: {
-    backgroundImage: 'url("./pulpfiction.jpg")',
+    backgroundImage: `url(${bg})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover'
   },
@@ -42,6 +43,7 @@ class Hangman extends Component {
   ];
   componentWillMount() {
     for (let i in styles.body) {
+      console.log(styles.body)
       document.body.style[i] = styles.body[i];
     }
   }
@@ -217,19 +219,20 @@ class Hangman extends Component {
 
   render() {
     return (
-      <div id="game">
-        <h1>Hangman!</h1>
+      <div style={styles.game}>
+        <h1 style={styles.text}>Hangman!</h1>
         <br />
-        <h2>Tarantino Movies Edition</h2>
-        <h3 id="get-started">Press Space to play!</h3>
-        <h3 id="wins">Wins: {this.state.wins}</h3>
-        <h3 id="losses">Losses: {this.state.losses}</h3>
+        <h2 style={styles.text}>Tarantino Movies Edition</h2>
         <br />
-        <h2 id="game-over">Game Over</h2>
-        <h3 id="word-being-guessed">{this.state.wordBeingGuessed}</h3>
+        <h3 style={styles.text} id="get-started">Press Space to play!</h3>
+        <h3 style={styles.text} id="wins">Wins: {this.state.wins}</h3>
+        <h3 style={styles.text} id="losses">Losses: {this.state.losses}</h3>
         <br />
-        <h4 id="letters-already-guessed">{this.state.guessedLetters}</h4>
-        <h4 id="number-of-guesses">{this.state.remainingGuesses}</h4>
+        <h2 style={styles.text} id="game-over">Game Over</h2>
+        <h3 style={styles.text} id="word-being-guessed">{this.state.wordBeingGuessed}</h3>
+        <br style={styles.text} />
+        <h4 style={styles.text} id="letters-already-guessed">{this.state.guessedLetters}</h4>
+        <h4 style={styles.text} id="number-of-guesses">{this.state.remainingGuesses}</h4>
       </div>
     );
   }

@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
-import img1 from '../assets/img/nosh/1.jpg';
-import img2 from '../assets/img/nosh/2.jpg';
-import img3 from '../assets/img/nosh/3.jpg';
-import img4 from '../assets/img/nosh/4.jpg';
-import img5 from '../assets/img/nosh/5.jpg';
+import nimg1 from '../assets/img/nosh/1.jpg';
+import nimg2 from '../assets/img/nosh/2.jpg';
+import nimg3 from '../assets/img/nosh/3.jpg';
+import nimg4 from '../assets/img/nosh/4.jpg';
+import nimg5 from '../assets/img/nosh/5.jpg';
 
-const picsArr = [img1, img2, img3, img4, img5];
+import uimg1 from '../assets/img/untrending/1.jpg';
+import uimg2 from '../assets/img/untrending/2.jpg';
+import uimg3 from '../assets/img/untrending/3.jpg';
+import uimg4 from '../assets/img/untrending/4.jpg';
+import uimg5 from '../assets/img/untrending/5.jpg';
+
+const noshPicsArr = [nimg1, nimg2, nimg3, nimg4, nimg5];
+
+const untrendingPicsArr = [uimg1, uimg2, uimg3, uimg4, uimg5];
 
 const styles = {
   carouselDiv: {
@@ -30,7 +38,28 @@ const styles = {
   }
 };
 
-const ProjCarousel = () => {
+class ProjCarousel extends Component {
+  constructor(props) {
+    super(props);
+
+    switch (props.show) {
+      case 'nosh': {
+        this.picsArr = noshPicsArr
+        break;
+      }
+      case 'untrending': {
+        this.picsArr = untrendingPicsArr
+        break;
+      }
+      default: {
+        return undefined;
+      }
+    }
+  }
+
+  picsArr = []
+
+  render() {
     return (
       <div style={styles.carouselDiv}>
         <Carousel
@@ -45,9 +74,9 @@ const ProjCarousel = () => {
           interval={7000}
           transitionTime={800}
         >
-          {picsArr.map((pic, index) => {
+          {this.picsArr.map((pic, index) => {
             return (
-              <div style={styles.imgDiv}>
+              <div key={index} style={styles.imgDiv}>
                 <img src={pic} alt="nosh" key={index} style={styles.img} />
               </div>
             );
@@ -55,6 +84,7 @@ const ProjCarousel = () => {
         </Carousel>
       </div>
     );
+  }
 }
 
 export default ProjCarousel;

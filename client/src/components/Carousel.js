@@ -95,7 +95,7 @@ const MainCarousel = () => {
       >
         {picsArr.map((pic, index) => {
           return (
-            <div style={styles.imgDiv}>
+            <div key={index} style={styles.imgDiv}>
               <img src={pic} alt="scenery" key={index} style={styles.img} />
             </div>
           );

@@ -1,33 +1,40 @@
 body {
-    background-image: url('../assets/img/backgrounds/noisy-background.png');
+  background-image: url('../assets/img/backgrounds/noisy-background.png');
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 2vw;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+p,
+h3,
+li,
+.links {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.react-svg {
+  animation: react-svg-spin infinite 20s linear;
+  height: 12vh;
+}
+
+@keyframes react-svg-spin {
+  from {
+    transform: rotate(0deg);
   }
-  
-  h1 {
-    font-size: 3rem;
-    font-weight: 900;
-    margin: 2vw;
+  to {
+    transform: rotate(360deg);
   }
-  
-  p {
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-  
-  .react-svg {
-    animation: react-svg-spin infinite 20s linear;
-    height: 12vh;
-  }
-  
-  @keyframes react-svg-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  footer {
-    background-image: url('../assets/img/backgrounds/noisy-footer.png');
-  }
-  
+}
+
+footer {
+  background-image: url('../assets/img/backgrounds/noisy-footer.png');
+}

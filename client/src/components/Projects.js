@@ -2,26 +2,10 @@ import React from 'react';
 import ProjCarousel from './ProjCarousel';
 import { Title } from './StyledTags';
 
-// import img1 from '../assets/img/nosh/1.jpg';
-// import img2 from '../assets/img/nosh/2.jpg';
-// import img3 from '../assets/img/nosh/3.jpg';
-// import img4 from '../assets/img/nosh/4.jpg';
-// import img5 from '../assets/img/nosh/5.jpg';
-
-
-// const noshPicsArr = [img1, img2, img3, img4, img5];
-
 const styles = {
   rootDiv: {},
-  projectTitle: {
-    fontSize: '2rem',
-    fontWeight: '600'
-  },
-  links: {
-    fontSize: '1.5rem',
-    fontWeight: '600'
-    // float: 'left'
-  },
+  projectTitle: {},
+  links: {},
   p: {}
 };
 
@@ -33,7 +17,7 @@ const Projects = () => {
       </div>
       <div className="row justify-content-center">
         <div className="col-10">
-          <ProjCarousel />
+          <ProjCarousel show='untrending' />
           <br />
           <h2 style={styles.projectTitle}>Untrending:</h2>
           <a
@@ -42,6 +26,7 @@ const Projects = () => {
             target="_blank"
             rel="noopener noreferrer"
             style={styles.links}
+            className='links'
           >
             Github Repo
           </a>
@@ -52,6 +37,7 @@ const Projects = () => {
             target="_blank"
             rel="noopener noreferrer"
             style={styles.links}
+            className='links'
           >
             Deployed
           </a>
@@ -66,7 +52,7 @@ const Projects = () => {
           <br />
           <br />
           <br />
-          <ProjCarousel />
+          <ProjCarousel show='nosh' />
           <br />
           <h2 style={styles.projectTitle}>Nosh:</h2>
             <a
@@ -75,6 +61,7 @@ const Projects = () => {
               target="_blank"
               rel="noopener noreferrer"
               style={styles.links}
+              className='links'
             >
               Github Repo
             </a>
@@ -85,6 +72,7 @@ const Projects = () => {
               target="_blank"
               rel="noopener noreferrer"
               style={styles.links}
+              className='links'
             >
               Deployed
             </a>

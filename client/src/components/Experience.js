@@ -9,7 +9,7 @@ const styles = {
     fontWeight: '900',
     margin: '2vw'
   },
-  p: {},
+  h3: {},
   li: {
     listStyleType: 'none',
     marginLeft: '-1vw'
@@ -24,22 +24,22 @@ const Experience = () => {
       </div>
       <div className="row justify-content-center">
         <div className="col-10">
-          <p style={styles.p}>
+          <h3 style={styles.h3}>
             IT Recruiter - KForce
             <br />
             Sep '17 - Feb ’18, San Ramon, CA
-            <ul>
-              <ListItem>
-                Quickly familiarized with IT structure and terminology,
-                gathering a strong understanding of the field
-              </ListItem>
-              <ListItem>
-                Focus on building deep relationships with dozens of senior IT
-                professionals monthly to match their needs and interests for
-                available roles at Fortune 500 companies in the SF Bay Area
-              </ListItem>
-            </ul>
-          </p>
+          </h3>
+          <ul>
+            <ListItem>
+              Quickly familiarized with IT structure and terminology, gathering
+              a strong understanding of the field
+            </ListItem>
+            <ListItem>
+              Focus on building deep relationships with dozens of senior IT
+              professionals monthly to match their needs and interests for
+              available roles at Fortune 500 companies in the SF Bay Area
+            </ListItem>
+          </ul>
           <br />
         </div>
       </div>
