@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import './Hangman.css';
+
+
 
 class Hangman extends Component {
   constructor(props) {
@@ -26,10 +29,6 @@ class Hangman extends Component {
     'Jackie Brown',
     'Django Unchained'
   ];
-
-  componentWillMount() {
-    require('../../assets/css/Hangman.css')
-  }
 
   componentDidMount() {
     document.addEventListener('keyup', this.initial);
