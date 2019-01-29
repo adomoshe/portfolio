@@ -2,11 +2,11 @@ import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
-import img1 from '../assets/img/nosh/1.png';
-import img2 from '../assets/img/nosh/2.png';
-import img3 from '../assets/img/nosh/3.png';
-import img4 from '../assets/img/nosh/4.png';
-import img5 from '../assets/img/nosh/5.png';
+import img1 from '../assets/img/nosh/1.jpg';
+import img2 from '../assets/img/nosh/2.jpg';
+import img3 from '../assets/img/nosh/3.jpg';
+import img4 from '../assets/img/nosh/4.jpg';
+import img5 from '../assets/img/nosh/5.jpg';
 
 const picsArr = [img1, img2, img3, img4, img5];
 
