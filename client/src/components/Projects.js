@@ -2,12 +2,14 @@ import React from 'react';
 import ProjCarousel from './ProjCarousel';
 import { Title } from './StyledTags';
 
-import img1 from '../assets/img/nosh/1.png';
-import img2 from '../assets/img/nosh/2.png';
-import img3 from '../assets/img/nosh/3.png';
-import img4 from '../assets/img/nosh/4.png';
+// import img1 from '../assets/img/nosh/1.jpg';
+// import img2 from '../assets/img/nosh/2.jpg';
+// import img3 from '../assets/img/nosh/3.jpg';
+// import img4 from '../assets/img/nosh/4.jpg';
+// import img5 from '../assets/img/nosh/5.jpg';
 
-const noshPicsArr = [img1, img2, img3, img4];
+
+// const noshPicsArr = [img1, img2, img3, img4, img5];
 
 const styles = {
   rootDiv: {},
@@ -64,7 +66,7 @@ const Projects = () => {
           <br />
           <br />
           <br />
-          <ProjCarousel pics={noshPicsArr} />
+          <ProjCarousel />
           <br />
           <h2 style={styles.projectTitle}>Nosh:</h2>
             <a

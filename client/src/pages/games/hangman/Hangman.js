@@ -1,31 +1,18 @@
 import React, { Component } from 'react';
-import './Hangman.css';
 
 const styles = {
-
   body: {
-    backgroundImage: url('./pulpfiction.jpg'),
-    backgroundRepeat: no-repeat,
-    backgroundSize: cover
+    backgroundImage: 'url("./pulpfiction.jpg")',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover'
+  },
+  text: {
+    color: 'white'
+  },
+  game: {
+    margin: '2vw'
   }
-  
-  [a,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p]: {
-    color: white;
-  }
-  
-  #game {
-    margin: 2vw;
-  }
-  
-
-}
+};
 
 class Hangman extends Component {
   constructor(props) {
@@ -53,6 +40,11 @@ class Hangman extends Component {
     'Jackie Brown',
     'Django Unchained'
   ];
+  componentWillMount() {
+    for (let i in styles.body) {
+      document.body.style[i] = styles.body[i];
+    }
+  }
 
   componentDidMount() {
     document.addEventListener('keyup', this.initial);
@@ -245,6 +237,9 @@ class Hangman extends Component {
   componentWillUnmount() {
     document.removeEventListener('keyup', this.initial);
     document.removeEventListener('keyup', this.guess);
+    for (let i in styles.body) {
+      document.body.style[i] = null;
+    }
   }
 }
 
