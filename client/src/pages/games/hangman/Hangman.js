@@ -1,7 +1,31 @@
 import React, { Component } from 'react';
 import './Hangman.css';
 
+const styles = {
 
+  body: {
+    backgroundImage: url('./pulpfiction.jpg'),
+    backgroundRepeat: no-repeat,
+    backgroundSize: cover
+  }
+  
+  [a,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p]: {
+    color: white;
+  }
+  
+  #game {
+    margin: 2vw;
+  }
+  
+
+}
 
 class Hangman extends Component {
   constructor(props) {
