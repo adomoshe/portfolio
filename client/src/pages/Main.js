@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Main.css';
 
 import Nav from '../components/Nav';
 import MainCarousel from '../components/Carousel';
@@ -10,10 +11,6 @@ import Experience from '../components/Experience';
 import Footer from '../components/Footer';
 
 class Main extends Component {
-  componentWillMount() {
-    require('../assets/css/Main.css')
-  }
-
   render() {
     return (
       <div className="container-fluid">

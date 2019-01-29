@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('../img/backgrounds/noisy-background.png');
+    background-image: url('../assets/img/backgrounds/noisy-background.png');
     font-family: 'Poiret One', cursive;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -33,6 +33,6 @@ body {
   }
   
   footer {
-    background-image: url('../img/backgrounds/noisy-footer.png');
+    background-image: url('../assets/img/backgrounds/noisy-footer.png');
   }
   
