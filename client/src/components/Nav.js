@@ -31,7 +31,7 @@ const Nav = () => {
   return (
     <nav style={styles.nav}>
       <IconButton aria-label="Homepage Link">
-        <h3 style={styles.navTitle}>Ado</h3>
+        <h2 style={styles.navTitle}>Ado</h2>
       </IconButton>
       <span className="nav-buttons" style={styles.navBtns}>
         <Github />

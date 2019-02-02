@@ -41,9 +41,9 @@ class Hangman extends Component {
     'Jackie Brown',
     'Django Unchained'
   ];
+
   componentWillMount() {
     for (let i in styles.body) {
-      console.log(styles.body)
       document.body.style[i] = styles.body[i];
     }
   }
@@ -224,15 +224,29 @@ class Hangman extends Component {
         <br />
         <h2 style={styles.text}>Tarantino Movies Edition</h2>
         <br />
-        <h3 style={styles.text} id="get-started">Press Space to play!</h3>
-        <h3 style={styles.text} id="wins">Wins: {this.state.wins}</h3>
-        <h3 style={styles.text} id="losses">Losses: {this.state.losses}</h3>
+        <h3 style={styles.text} id="get-started">
+          Press Space to play!
+        </h3>
+        <h3 style={styles.text} id="wins">
+          Wins: {this.state.wins}
+        </h3>
+        <h3 style={styles.text} id="losses">
+          Losses: {this.state.losses}
+        </h3>
         <br />
-        <h2 style={styles.text} id="game-over">Game Over</h2>
-        <h3 style={styles.text} id="word-being-guessed">{this.state.wordBeingGuessed}</h3>
+        <h2 style={styles.text} id="game-over">
+          Game Over
+        </h2>
+        <h3 style={styles.text} id="word-being-guessed">
+          {this.state.wordBeingGuessed}
+        </h3>
         <br style={styles.text} />
-        <h4 style={styles.text} id="letters-already-guessed">{this.state.guessedLetters}</h4>
-        <h4 style={styles.text} id="number-of-guesses">{this.state.remainingGuesses}</h4>
+        <h4 style={styles.text} id="letters-already-guessed">
+          {this.state.guessedLetters}
+        </h4>
+        <h4 style={styles.text} id="number-of-guesses">
+          {this.state.remainingGuesses}
+        </h4>
       </div>
     );
   }

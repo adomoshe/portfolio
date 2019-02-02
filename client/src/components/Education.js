@@ -19,7 +19,7 @@ const Education = () => {
         <Title>Education</Title>
       </div>
       <div className="row justify-content-center">
-        <div className="col-10">
+        <div className="col-sm-8">
           <h3 style={styles.h3}>
             University of California, Berkeley Extension, CA
             <br />

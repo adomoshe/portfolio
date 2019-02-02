@@ -1,6 +1,5 @@
 import React from 'react';
 import { Source } from './Buttons';
-import { Title } from './StyledTags';
 
 const styles = {
   rootDiv: {
@@ -9,7 +8,8 @@ const styles = {
     marginLeft: 0,
     marginRight: 0,
     marginBottom: '1.5vh',
-    borderRadius: 10
+    borderRadius: 10,
+    padding: '1vh'
   },
   title: {
     marginBottom: 0
@@ -25,9 +25,6 @@ const styles = {
 const Footer = () => {
   return (
     <footer style={styles.rootDiv}>
-      <div className="row">
-        <Title style={styles.title}>"Footer"</Title>
-      </div>
       <div className="row justify-content-center">
         <div className="col-10 content-justify-center" align="center">
           <Source />
@@ -50,3 +47,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

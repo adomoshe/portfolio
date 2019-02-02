@@ -13,7 +13,7 @@ const About = () => {
         <Title>Adoran Moshe</Title>
       </div>
       <div className="row justify-content-center">
-        <div className="col-10">
+        <div className="col-sm-8">
           <p style={styles.p}>
             Full-stack web developer with experience in IT recruiting. Developed
             an interest in web development while recruiting in the field,
