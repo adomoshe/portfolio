@@ -13,7 +13,7 @@ const styles = {
 const Title = props => {
   return (
     <div className="col-12">
-      <h1 style={styles.title}>{props.children}</h1>
+      <h1>{props.children}</h1>
     </div>
   );
 };

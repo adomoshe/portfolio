@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Main from './pages/Main';
+import Blogs from './pages/blog/Blogs';
 import Hangman from './pages/games/hangman/Hangman';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -21,6 +22,7 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Main} />
+          <Route path="/blog" component={Blogs} />
           <Route exact path="/games/hangman" component={Hangman} />
         </Switch>
       </Router>

@@ -22,23 +22,23 @@ const styles = {
   }
 };
 
-const Footer = () => {
+const Footer = props => {
   return (
     <footer style={styles.rootDiv}>
       <div className="row justify-content-center">
-        <div className="col-10 content-justify-center" align="center">
+        <div className="col-10" align="center">
           <Source />
           <p style={styles.p}>
             Source code <br />
-            <a
-              aria-label="Github Link"
+            {props.niki? <a
+              aria-label="Link"
               href="https://www.linkedin.com/in/niki-moshe-3b038b4/"
               target="_blank"
               rel="noopener noreferrer"
               style={styles.links}
             >
               Images thanks to Niki Moshe
-            </a>
+            </a> : null}
           </p>
         </div>
       </div>
