@@ -21,7 +21,7 @@ class Main extends Component {
         <Projects />
         <Education />
         <Experience />
-        <Footer />
+        <Footer niki={true}/>
       </div>
     );
   }

@@ -26,6 +26,12 @@ li,
   font-weight: 600;
 }
 
+b {
+  font-size: 2rem;
+  font-weight: 900;
+  color: yellow;
+}
+
 .react-svg {
   animation: react-svg-spin infinite 20s linear;
   height: 12vh;

@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { bool } from 'prop-types';
+
 import { Source } from './Buttons';
 
 const styles = {
@@ -22,29 +24,40 @@ const styles = {
   }
 };
 
-const Footer = props => {
-  return (
-    <footer style={styles.rootDiv}>
-      <div className="row justify-content-center">
-        <div className="col-10" align="center">
-          <Source />
-          <p style={styles.p}>
-            Source code <br />
-            {props.niki? <a
-              aria-label="Link"
-              href="https://www.linkedin.com/in/niki-moshe-3b038b4/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={styles.links}
-            >
-              Images thanks to Niki Moshe
-            </a> : null}
-          </p>
+class Footer extends Component {
+  static propTypes = {
+    niki: bool
+  };
+
+  static defaultProps = {
+    niki: false
+  };
+
+  render() {
+    return (
+      <footer style={styles.rootDiv}>
+        <div className="row justify-content-center">
+          <div className="col-10" align="center">
+            <Source />
+            <p style={styles.p}>
+              Source code <br />
+              {this.props.niki ? (
+                <a
+                  aria-label="Link"
+                  href="https://www.linkedin.com/in/niki-moshe-3b038b4/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={styles.links}
+                >
+                  Images thanks to Niki Moshe
+                </a>
+              ) : null}
+            </p>
+          </div>
         </div>
-      </div>
-    </footer>
-  );
-};
+      </footer>
+    );
+  }
+}
 
 export default Footer;
-

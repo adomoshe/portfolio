@@ -40,7 +40,7 @@ const styles = {
 
 class ProjCarousel extends Component {
   constructor(props) {
-    super(props);
+    super();
 
     switch (props.show) {
       case 'nosh': {

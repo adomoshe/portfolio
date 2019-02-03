@@ -10,19 +10,19 @@ const styles = {
   }
 };
 
-const Title = props => {
+const Title = ({children}) => {
   return (
     <div className="col-12">
-      <h1>{props.children}</h1>
+      <h1>{children}</h1>
     </div>
   );
 };
 
-const ListItem = props => {
+const ListItem = ({children}) => {
   return (
     <li style={styles.li}>
       <FontAwesomeIcon icon="arrow-right" />
-      &ensp; {props.children}
+      &emsp; {children}
     </li>
   );
 };
