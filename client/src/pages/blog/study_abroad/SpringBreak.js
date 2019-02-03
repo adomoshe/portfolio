@@ -1,32 +1,20 @@
 import React from 'react';
 
-import BlogImage from '../components/BlogImage';
+import { BlogImage, BlogVideo } from '../components/BlogMedia';
 
-import img1 from './img/1.jpg';
-import img2 from './img/2.jpg';
-import img3 from './img/3.jpg';
-import img4 from './img/4.jpg';
-import img5 from './img/5.jpg';
-import img6 from './img/6.jpg';
-import img7 from './img/7.jpg';
-import img8 from './img/8.jpg';
-import img9 from './img/9.jpg';
+import img1 from './img/spring_break/1.jpg';
+import img2 from './img/spring_break/2.jpg';
+import img3 from './img/spring_break/3.jpg';
+import img4 from './img/spring_break/4.jpg';
+import img5 from './img/spring_break/5.jpg';
+import img6 from './img/spring_break/6.jpg';
+import img7 from './img/spring_break/7.jpg';
+import img8 from './img/spring_break/8.jpg';
+import img9 from './img/spring_break/9.jpg';
 
 const styles = {
   title: {
     marginLeft: 0
-  },
-  figure: {
-    margin: 'auto',
-    width: '96vh',
-    height: '61vh',
-    textAlign: 'center'
-  },
-  vid: {
-    boxShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
-    margin: '3vh',
-    width: '90vh',
-    height: '50.625vh'
   }
 };
 
@@ -35,17 +23,7 @@ const SpringBreak = () => {
     <div className="row justify-content-center">
       <div className="col-sm-6">
         <h1 style={styles.title}>Spring Break</h1>
-        <figure style={styles.figure}>
-          <iframe
-            title="Andres Road Trip Video"
-            style={styles.vid}
-            src="https://www.youtube.com/embed/JztdKoEgv_Y"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <figcaption>Video by Andres Granado</figcaption>
-        </figure>
+        <BlogVideo vidSource="https://www.youtube.com/embed/JztdKoEgv_Y" />
         <p>
           &emsp;After learning that we could rent a car in Europe, unlike the
           U.S. where the minimum age to rent is 24, we decided to give it a go.
@@ -307,6 +285,7 @@ const SpringBreak = () => {
           morning, we drove to Barcelona that night, and parked the car near our
           homestay. We all went home then returned the car in the morning.
         </p>
+        <BlogVideo vidSource="https://www.youtube.com/embed/lupskQ4qyDo" />
       </div>
     </div>
   );

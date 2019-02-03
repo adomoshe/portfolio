@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ListItem } from '../../../components/StyledTags';
-import BlogImage from '../components/BlogImage';
+import {BlogImage} from '../components/BlogMedia';
 
 import img1 from './img/1.jpg';
 import img2 from './img/2.jpg';
