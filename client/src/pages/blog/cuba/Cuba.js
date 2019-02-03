@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ListItem } from '../../../components/StyledTags';
+import BlogImage from '../components/BlogImage';
 
 import img1 from './img/1.jpg';
 import img2 from './img/2.jpg';
@@ -16,29 +17,7 @@ const styles = {
     align: 'center',
     marginLeft: 0
   },
-  figure: {
-    float: 'left',
-    width: '66vh',
-    textAlign: 'center'
-  },
-  pics: {
-    boxShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
-    margin: '3vh',
-    width: '60vh'
-  },
-  caption: {},
   lists: {}
-};
-
-const BlogImage = ({ picSource, children }) => {
-  return (
-    <figure style={styles.figure}>
-      <img src={picSource} alt="Blog pic" style={styles.pics} />
-      {children ? (
-        <figcaption style={styles.caption}>{children}</figcaption>
-      ) : null}
-    </figure>
-  );
 };
 
 const Cuba = () => {
@@ -315,20 +294,18 @@ const Cuba = () => {
         <br />
         <br />
         <h2>Cienfuegos and Trinidad</h2>
-        <div>
-          <p>
-            &emsp;I also want to mention the benefits of organized travel. Most
-            hotels in Old Havana have an area for trip organizers to set up and
-            display the various trips or activities they offer. I went on an
-            overnight trip to Cienfuegos and Trinidad which is about a 4 hour
-            drive from Havana. This trip cost 150 CUC and was well worth it. We
-            received breakfast lunch and dinner both days, stayed the night at a
-            quaint spot in the mountains, and had guided tours in the cities. I
-            would recommend this option if you want to get out of Havana for a
-            while, they also do day trips and other activities. If you are
-            traveling alone this is also a great way to meet other travelers.
-          </p>
-        </div>
+        <p>
+          &emsp;I also want to mention the benefits of organized travel. Most
+          hotels in Old Havana have an area for trip organizers to set up and
+          display the various trips or activities they offer. I went on an
+          overnight trip to Cienfuegos and Trinidad which is about a 4 hour
+          drive from Havana. This trip cost 150 CUC and was well worth it. We
+          received breakfast lunch and dinner both days, stayed the night at a
+          quaint spot in the mountains, and had guided tours in the cities. I
+          would recommend this option if you want to get out of Havana for a
+          while, they also do day trips and other activities. If you are
+          traveling alone this is also a great way to meet other travelers.
+        </p>
         <br />
         <p>
           &emsp;Cuba was an absolute blast and I would highly recommend
