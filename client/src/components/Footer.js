@@ -4,7 +4,7 @@ import { bool } from 'prop-types';
 import { Source } from './Buttons';
 
 const styles = {
-  rootDiv: {
+  footer: {
     boxShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
     position: 'relative',
     marginLeft: 0,
@@ -35,7 +35,7 @@ class Footer extends Component {
 
   render() {
     return (
-      <footer style={styles.rootDiv}>
+      <footer style={styles.footer}>
         <div className="row justify-content-center">
           <div className="col-10" align="center">
             <Source />
