@@ -42,7 +42,7 @@ const BlogHome = ({ match }) => {
           </h3>
         </Link>
         <h3>&emsp;January, 2016</h3>
-        <Link to={`${match.path}/week-2`} style={styles.link}>
+        <Link to={`${match.path}/week_2`} style={styles.link}>
           <h3>
             Week 2 in Barcelona (Montserrat, Sailing, and Futbol)
           </h3>
