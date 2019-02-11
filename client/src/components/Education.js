@@ -4,7 +4,6 @@ import { Title, ListItem } from './StyledTags';
 const styles = {
   rootDiv: {},
   title: {
-    // fontShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
     fontSize: '3rem',
     fontWeight: '900',
     margin: '2vw'
