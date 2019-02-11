@@ -1,3 +1,5 @@
+// Project section on main page
+
 import React from 'react';
 import ProjCarousel from './ProjCarousel';
 import { Title } from './StyledTags';

@@ -1,3 +1,5 @@
+// Technical skills section on main page
+
 import React from 'react';
 import { Title, ListItem } from './StyledTags';
 
