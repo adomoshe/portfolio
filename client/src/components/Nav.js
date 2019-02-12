@@ -1,13 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-// import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+// import AppBar from '@material-ui/core/AppBar';
+// import Toolbar from '@material-ui/core/Toolbar';
+// import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import AccountCircle from '@material-ui/icons/AccountCircle';
+// import AccountCircle from '@material-ui/icons/AccountCircle';
 // import Switch from '@material-ui/core/Switch';
 // import FormControlLabel from '@material-ui/core/FormControlLabel';
 // import FormGroup from '@material-ui/core/FormGroup';
@@ -19,31 +18,20 @@ import { Github, LinkedIn, Medium, Email } from './Buttons';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const styles = {
-  root: {
-    // flexGrow: 1,
+  nav: {
     zIndex: '10',
     position: 'fixed',
-    // width: '100%',
-    marginTop: 0,
-    marginLeft: 0,
-    boxShadow: '0px 0px 0px 0px rgba(0,0,0,0.0)',
-    backgroundColor: 'transparent'
-    // paddingRight: '3vh'
+    width: '100%',
+    paddingRight: '3vh'
   },
   navTitle: {
-    // flexGrow: 1
     float: 'left',
-    fontSize: '2rem',
-    fontFamily: "'Poiret One', cursive",
-    fontWeight: '900',
-    marginTop: 0,
-    marginBottom: 0,
-    padding: 0,
     color: 'white'
   },
-  menuButton: {
-    marginLeft: '-1vh',
+  menuBtn: {
+    // marginLeft: '-1vh',
     marginRight: '1vh',
+    float: 'left',
     color: 'white'
   },
   navBtns: {
@@ -75,6 +63,57 @@ class Nav extends React.Component {
     const open = Boolean(anchorEl);
 
     return (
+      <nav style={styles.nav}>
+        {auth && (
+          <div>
+            <IconButton
+              aria-owns={open ? 'menu-appbar' : undefined}
+              aria-haspopup="true"
+              style={styles.menuBtn}
+              onClick={this.handleMenu}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right'
+              }}
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right'
+              }}
+              open={open}
+              onClose={this.handleClose}
+            >
+              <Link to={'/blog'}>
+                <MenuItem onClick={this.handleClose}>
+                  <h3>Blog</h3>
+                </MenuItem>
+              </Link>
+              <Link to={'/games'}>
+                <MenuItem onClick={this.handleClose}>
+                  <h3>Games</h3>
+                </MenuItem>
+              </Link>
+            </Menu>
+          </div>
+        )}
+        <Link to="/">
+          <h2 aria-label="Homepage Link" style={styles.navTitle}>
+            Ado
+          </h2>
+        </Link>
+        <span className="nav-buttons" style={styles.navBtns}>
+          <Github />
+          <LinkedIn />
+          <Medium />
+          <Email />
+        </span>
+      </nav>
+
       // <div style={styles.root}>
       // {/* <FormGroup> */}
       // {/* <FormControlLabel
@@ -88,58 +127,54 @@ class Nav extends React.Component {
       //   label={auth ? 'Logout' : 'Login'}
       // /> */}
       // {/* </FormGroup> */}
-      <AppBar style={styles.root}>
-        <Toolbar>
-          <IconButton style={styles.menuButton} aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography type='button' style={styles.navTitle}>Ado</Typography>
-          
-          {auth && (
-            <div>
-              <IconButton
-                aria-owns={open ? 'menu-appbar' : undefined}
-                aria-haspopup="true"
-                onClick={this.handleMenu}
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right'
-                }}
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right'
-                }}
-                open={open}
-                onClose={this.handleClose}
-              >
-                <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                <MenuItem onClick={this.handleClose}>My account</MenuItem>
-              </Menu>
-            </div>
-          )}
-          <span className="nav-buttons" style={styles.navBtns}>
-            <Github />
-            <LinkedIn />
-            <Medium />
-            <Email />
-          </span>
-        </Toolbar>
-      </AppBar>
+      // <AppBar style={styles.root}>
+      //   <Toolbar>
+      //     <IconButton style={styles.menuButton} aria-label="Menu">
+      //       <MenuIcon />
+      //     </IconButton>
+      //     <Typography type='button' style={styles.navTitle}>Ado</Typography>
+
+      //     {auth && (
+      //       <div>
+      //         <IconButton
+      //           aria-owns={open ? 'menu-appbar' : undefined}
+      //           aria-haspopup="true"
+      //           onClick={this.handleMenu}
+      //           color="inherit"
+      //         >
+      //           <AccountCircle />
+      //         </IconButton>
+      //         <Menu
+      //           id="menu-appbar"
+      //           anchorEl={anchorEl}
+      //           anchorOrigin={{
+      //             vertical: 'top',
+      //             horizontal: 'right'
+      //           }}
+      //           transformOrigin={{
+      //             vertical: 'top',
+      //             horizontal: 'right'
+      //           }}
+      //           open={open}
+      //           onClose={this.handleClose}
+      //         >
+      //           <MenuItem onClick={this.handleClose}>Profile</MenuItem>
+      //           <MenuItem onClick={this.handleClose}>My account</MenuItem>
+      //         </Menu>
+      //       </div>
+      //     )}
+      //     <span className="nav-buttons" style={styles.navBtns}>
+      //       <Github />
+      //       <LinkedIn />
+      //       <Medium />
+      //       <Email />
+      //     </span>
+      //   </Toolbar>
+      // </AppBar>
       // </div>
     );
   }
 }
-
-Nav.propTypes = {
-  classes: PropTypes.object.isRequired
-};
 
 export default Nav;
 
@@ -157,7 +192,7 @@ export default Nav;
 //   },
 //   navTitle: {
 //     float: 'left',
-//     fontSize: '2em',
+//     fontSize: '2rem',
 //     fontFamily: "'Poiret One', cursive",
 //     fontWeight: '900',
 //     marginTop: 0,
