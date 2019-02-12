@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Main from './pages/Main';
@@ -16,18 +16,16 @@ import {
 
 library.add(fab, faAt, faHandPointer, faArrowRight, faCode);
 
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Main} />
-          <Route path="/blog" component={Blogs} />
-          <Route exact path="/games" component={Hangman} />
-        </Switch>
-      </Router>
-    );
-  }
-}
+const App = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Main} />
+        <Route path="/blog" component={Blogs} />
+        <Route exact path="/games" component={Hangman} />
+      </Switch>
+    </Router>
+  );
+};
 
 export default App;
