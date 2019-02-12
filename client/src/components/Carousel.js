@@ -52,7 +52,7 @@ const picsArr = [
 const styles = {
   carouselDiv: {
     boxShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
-    marginTop: '1.5vh',
+    marginTop: '1vh',
     height: '43vw'
     // borderRadius: 10
   },

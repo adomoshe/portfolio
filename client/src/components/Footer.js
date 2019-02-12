@@ -9,7 +9,7 @@ const styles = {
     position: 'relative',
     marginLeft: 0,
     marginRight: 0,
-    marginBottom: '1.5vh',
+    marginBottom: '1vh',
     borderRadius: 10,
     padding: '1vh'
   },

@@ -1,5 +1,5 @@
 import React from 'react';
-import IconButton from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import reactSVG from '../react.svg';
 
@@ -11,7 +11,7 @@ const Github = () => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <FontAwesomeIcon icon={['fab', 'github']} size="2x" color="white" />
+      <FontAwesomeIcon icon={['fab', 'github']} size="1x" color="white" />
     </IconButton>
   );
 };
@@ -24,7 +24,7 @@ const LinkedIn = () => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <FontAwesomeIcon icon={['fab', 'linkedin-in']} size="2x" color="white" />
+      <FontAwesomeIcon icon={['fab', 'linkedin-in']} size="1x" color="white" />
     </IconButton>
   );
 };
@@ -37,7 +37,7 @@ const Medium = () => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <FontAwesomeIcon icon={['fab', 'medium-m']} size="2x" color="white" />
+      <FontAwesomeIcon icon={['fab', 'medium-m']} size="1x" color="white" />
     </IconButton>
   );
 };
@@ -49,7 +49,7 @@ const Email = () => {
       href="mailto:adoran.moshe@gmail.com"
       rel="noopener noreferrer"
     >
-      <FontAwesomeIcon icon="at" size="2x" color="white" />
+      <FontAwesomeIcon icon="at" size="1x" color="white" />
     </IconButton>
   );
 };
