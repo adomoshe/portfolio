@@ -11,6 +11,9 @@ const styles = {
   category: {
       marginTop: '2vh'
   },
+  dates: {
+    color:'grey'
+  },
   link: {
     color: 'black',
     textAlign: 'center'
@@ -23,14 +26,14 @@ const BlogHome = ({ match }) => {
       <Title>Travel Blog</Title>
       <div className="col-sm-6">
       <h2 style={styles.category}>Cuba</h2>
-      <h3>&emsp;March, 2017</h3>
+      <h3 style={styles.dates}>&emsp;March, 2017</h3>
         <Link to={`${match.path}/cuba`} style={styles.link}>
           <h3>
             Important Pre-Departure and General Information (Trump Update)
           </h3>
         </Link>
         <h2 style={styles.category}>Spain (Study Abroad)</h2>
-        <h3>&emsp;March, 2016</h3>
+        <h3 style={styles.dates}>&emsp;March, 2016</h3>
         <Link to={`${match.path}/spring-break`} style={styles.link}>
           <h3>
             Spring Break Road Trip Into Portugal
@@ -41,7 +44,7 @@ const BlogHome = ({ match }) => {
             Dublin, Ireland
           </h3>
         </Link>
-        <h3>&emsp;January, 2016</h3>
+        <h3 style={styles.dates}>&emsp;January, 2016</h3>
         <Link to={`${match.path}/week_2`} style={styles.link}>
           <h3>
             Week 2 in Barcelona (Montserrat, Sailing, and Futbol)
