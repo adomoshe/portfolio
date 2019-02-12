@@ -16,16 +16,15 @@ import {
 
 library.add(fab, faAt, faHandPointer, faArrowRight, faCode);
 
-const App = () => {
-  return (
+const App = () => 
+   (
     <Router>
       <Switch>
         <Route exact path="/" component={Main} />
         <Route path="/blog" component={Blogs} />
-        <Route exact path="/games" component={Hangman} />
+        <Route path="/games" component={Hangman} />
       </Switch>
     </Router>
   );
-};
 
 export default App;

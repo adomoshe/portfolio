@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Main.css';
 
 import Nav from '../components/Nav';
@@ -10,21 +10,17 @@ import Education from '../components/Education';
 import Experience from '../components/Experience';
 import Footer from '../components/Footer';
 
-class Main extends Component {
-  render() {
-    return (
-      <div className="container-fluid">
-        <Nav />
-        <MainCarousel />
-        <About />
-        <Skills />
-        <Projects />
-        <Education />
-        <Experience />
-        <Footer niki={true}/>
-      </div>
-    );
-  }
-}
+const Main = () => (
+  <div className="container-fluid">
+    <Nav />
+    <MainCarousel />
+    <About />
+    <Skills />
+    <Projects />
+    <Education />
+    <Experience />
+    <Footer niki={true} />
+  </div>
+);
 
 export default Main;
