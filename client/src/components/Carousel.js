@@ -79,30 +79,28 @@ const styles = {
   }
 };
 
-const MainCarousel = () => {
-  return (
-    <div style={styles.carouselDiv}>
-      <Carousel
-        showStatus={false}
-        showThumbs={false}
-        infiniteLoop={true}
-        width="100%"
-        autoPlay={true}
-        stopOnHover={false}
-        interval={7000}
-        transitionTime={800}
-        style={styles.carousel}
-      >
-        {picsArr.map((pic, index) => {
-          return (
-            <div key={index} style={styles.imgDiv}>
-              <img src={pic} alt="scenery" key={index} style={styles.img} />
-            </div>
-          );
-        })}
-      </Carousel>
-    </div>
-  );
-};
+const MainCarousel = () => (
+  <div style={styles.carouselDiv}>
+    <Carousel
+      showStatus={false}
+      showThumbs={false}
+      infiniteLoop={true}
+      width="100%"
+      autoPlay={true}
+      stopOnHover={false}
+      interval={7000}
+      transitionTime={800}
+      style={styles.carousel}
+    >
+      {picsArr.map((pic, index) => {
+        return (
+          <div key={index} style={styles.imgDiv}>
+            <img src={pic} alt="scenery" key={index} style={styles.img} />
+          </div>
+        );
+      })}
+    </Carousel>
+  </div>
+);
 
 export default MainCarousel;

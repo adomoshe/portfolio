@@ -29,6 +29,10 @@ li,
   font-weight: 600;
 }
 
+.no-hover:hover {
+  background-color: blue;
+}
+
 b {
   font-size: 2rem;
   font-weight: 900;

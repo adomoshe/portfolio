@@ -8,13 +8,16 @@ import MenuIcon from '@material-ui/icons/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 
+import styles from 'styled-components';
+
 import { Github, LinkedIn, Medium, Email } from './Buttons';
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const styles = {
   nav: {
-    zIndex: '10',
+    zIndex: '5',
+    top: 0,
     position: 'fixed',
     width: '100%',
     paddingRight: '3vh'
@@ -46,8 +49,7 @@ class Nav extends React.Component {
   };
 
   render() {
-    const { anchorEl } = this.state;
-    const open = Boolean(anchorEl);
+    const { anchorEl, open } = this.state;
 
     return (
       <nav style={styles.nav}>
@@ -75,8 +77,8 @@ class Nav extends React.Component {
             onClose={this.menuClick}
             open={open}
           >
-            <Link to={'/blog'}>
-              <MenuItem onClick={this.menuClick}>
+            <Link to={'/blog'} className='no-hover'>
+              <MenuItem onClick={this.menuClick} className='no-hover'>
                 <h3>Blog</h3>
               </MenuItem>
             </Link>
