@@ -1,7 +1,6 @@
 import React from 'react';
 import './Main.css';
 
-import Nav from '../components/Nav';
 import MainCarousel from '../components/Carousel';
 import About from '../components/About';
 import Skills from '../components/Skills';
@@ -11,8 +10,7 @@ import Experience from '../components/Experience';
 import Footer from '../components/Footer';
 
 const Main = () => (
-  <div className="container-fluid">
-    <Nav />
+  <div>
     <MainCarousel />
     <About />
     <Skills />

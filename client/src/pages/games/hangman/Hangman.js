@@ -217,6 +217,14 @@ class Hangman extends Component {
     document.addEventListener('keyup', this.initial);
   }
 
+  componentWillUnmount() {
+    document.removeEventListener('keyup', this.initial);
+    document.removeEventListener('keyup', this.guess);
+    for (let i in styles.body) {
+      document.body.style[i] = null;
+    }
+  }
+
   render() {
     return (
       <div style={styles.game}>
@@ -249,14 +257,6 @@ class Hangman extends Component {
         </h4>
       </div>
     );
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keyup', this.initial);
-    document.removeEventListener('keyup', this.guess);
-    for (let i in styles.body) {
-      document.body.style[i] = null;
-    }
   }
 }
 

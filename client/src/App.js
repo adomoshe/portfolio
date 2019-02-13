@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import './App.css';
+import Nav from './components/Nav';
 import Main from './pages/Main';
 import Blogs from './pages/blog/Blogs';
 import Hangman from './pages/games/hangman/Hangman';
@@ -16,15 +18,17 @@ import {
 
 library.add(fab, faAt, faHandPointer, faArrowRight, faCode);
 
-const App = () => 
-   (
-    <Router>
+const App = () => (
+  <Router>
+    <div className="container-fluid">
+      <Nav />
       <Switch>
         <Route exact path="/" component={Main} />
         <Route path="/blog" component={Blogs} />
         <Route path="/games" component={Hangman} />
       </Switch>
-    </Router>
-  );
+    </div>
+  </Router>
+);
 
 export default App;

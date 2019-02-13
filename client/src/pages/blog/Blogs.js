@@ -1,7 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Nav from '../../components/Nav';
 import BlogHome from './BlogHome';
 import Cuba from './cuba/Cuba';
 import SpringBreak from './study_abroad/SpringBreak';
@@ -12,14 +11,19 @@ import Footer from '../../components/Footer';
 
 const Blogs = ({ match }) => (
   <Router>
-    <div className="container-fluid">
-      <Nav />
-      <Route exact path={match.url} component={BlogHome} />
-      <Route exact path={`${match.url}/cuba`} component={Cuba} />
-      <Route exact path={`${match.url}/spring-break`} component={SpringBreak} />
-      <Route exact path={`${match.url}/dublin`} component={Dublin} />
-      <Route exact path={`${match.url}/week_2`} component={Week2} />
-      <Route exact path={`${match.url}/arrival`} component={Arrival} />
+    <div>
+      <Switch>
+        <Route exact path={match.url} component={BlogHome} />
+        <Route exact path={`${match.url}/cuba`} component={Cuba} />
+        <Route
+          exact
+          path={`${match.url}/spring-break`}
+          component={SpringBreak}
+        />
+        <Route exact path={`${match.url}/dublin`} component={Dublin} />
+        <Route exact path={`${match.url}/week_2`} component={Week2} />
+        <Route exact path={`${match.url}/arrival`} component={Arrival} />
+      </Switch>
       <Footer />
     </div>
   </Router>
