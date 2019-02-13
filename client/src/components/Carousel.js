@@ -53,29 +53,20 @@ const styles = {
   carouselDiv: {
     boxShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
     marginTop: '1vh',
+    width: '100%',
     height: '43vw'
-    // borderRadius: 10
   },
   carousel: {
-    marginTop: 0,
-    marginLeft: 0,
     width: '100%',
     height: '43vw'
-    // borderRadius: 10
   },
   imgDiv: {
-    marginTop: 0,
-    marginLeft: 0,
     width: '100%',
     height: '43vw'
-    // borderRadius: 10
   },
   img: {
-    marginTop: 0,
-    marginLeft: 0,
     width: '100%',
     height: '100%'
-    // borderRadius: 10
   }
 };
 
@@ -88,8 +79,8 @@ const MainCarousel = () => (
       width="100%"
       autoPlay={true}
       stopOnHover={false}
-      interval={7000}
-      transitionTime={800}
+      interval={8000}
+      transitionTime={1000}
       style={styles.carousel}
     >
       {picsArr.map((pic, index) => {

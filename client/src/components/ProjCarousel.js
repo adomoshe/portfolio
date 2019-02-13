@@ -24,13 +24,13 @@ const styles = {
   carouselDiv: {
     boxShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
     height: '30vh',
-    width: '55vh'
+    width: '56vh'
   },
   imgDiv: {
     marginTop: 0,
     marginLeft: 0,
     height: '30vh',
-    width: '55vh'
+    width: '56vh'
   },
   img: {
     marginTop: 0,
