@@ -71,7 +71,7 @@ class Nav extends React.Component {
   };
 
   // Thanks to https://stackoverflow.com/questions/21474678/scrolltop-animation-without-jquery for this scroll animation
-  scrollAnimate(scrollDuration = 2500) {
+  scrollAnimate(scrollDuration = 1800) {
     const cosParameter = window.scrollY / 2;
     let oldTimestamp = performance.now();
     let scrollCount = 0;

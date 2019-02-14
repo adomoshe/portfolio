@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Main.css';
 
 import MainCarousel from '../components/Carousel';
@@ -9,16 +9,23 @@ import Education from '../components/Education';
 import Experience from '../components/Experience';
 import Footer from '../components/Footer';
 
-const Main = () => (
-  <div>
-    <MainCarousel />
-    <About />
-    <Skills />
-    <Projects />
-    <Education />
-    <Experience />
-    <Footer niki={true} />
-  </div>
-);
+class Main extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+  render() {
+    return (
+      <div>
+        <MainCarousel />
+        <About />
+        <Skills />
+        <Projects />
+        <Education />
+        <Experience />
+        <Footer niki={true} />
+      </div>
+    );
+  }
+}
 
 export default Main;

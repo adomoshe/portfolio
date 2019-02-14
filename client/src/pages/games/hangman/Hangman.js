@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import bg from './pulpfiction.jpg';
 
 const styles = {
+  game: {
+    marginTop: '15vh',
+    marginLeft: '4vh'
+  },
   body: {
     backgroundImage: `url(${bg})`,
     backgroundRepeat: 'no-repeat',
@@ -9,9 +13,6 @@ const styles = {
   },
   text: {
     color: 'white'
-  },
-  game: {
-    margin: '2vw'
   }
 };
 
@@ -21,6 +22,8 @@ class Hangman extends Component {
     this.state = {
       wins: 0,
       losses: 0,
+      gameOn: false,
+      display: '',
       remainingGuesses: 5,
       wordBeingGuessed: '',
       guessedLetters: '',
@@ -53,10 +56,7 @@ class Hangman extends Component {
   }
 
   initial(e) {
-    console.log(e);
     if (e.code === 'Space') {
-      //   document.getElementById('get-started').innerHTML = '';
-      //   document.getElementById('game-over').innerHTML = '';
       this.start();
     }
   }
@@ -67,6 +67,8 @@ class Hangman extends Component {
       Math.floor(Math.random() * this.movieList.length)
     ];
     this.setState({
+      gameOn: true,
+      display: '',
       moviePick: pick.toUpperCase()
     });
     console.log('Here it is... ', this.state.moviePick);
@@ -76,30 +78,25 @@ class Hangman extends Component {
 
   stringGen() {
     this.setState({ wordBeingGuessed: '' });
+    let finalWordBeingGuessed = '';
     letter: for (let i = 0; i < this.state.moviePick.length; i++) {
       for (let t = 0; t < this.state.correctUserGuesses.length; t++) {
         if (this.state.moviePick[i] === this.state.correctUserGuesses[t]) {
-          this.setState(state => {
-            state.wordBeingGuessed += state.correctUserGuesses[t] + ' ';
-          });
+          finalWordBeingGuessed += this.state.correctUserGuesses[t] + ' ';
           continue letter;
         }
       }
       if (i === this.state.moviePick.length - 1) {
-        this.setState(state => {
-          state.wordBeingGuessed += '_';
-        });
+        finalWordBeingGuessed += '_';
       } else if (this.state.moviePick[i] === ' ') {
-        this.setState(state => {
-          state.wordBeingGuessed += '- ';
-        });
+        finalWordBeingGuessed += '- ';
       } else {
-        this.setState(state => {
-          state.wordBeingGuessed += '_ ';
-        });
+        finalWordBeingGuessed += '_ ';
       }
     }
-    // this.updateHTML();
+    this.setState({
+      wordBeingGuessed: finalWordBeingGuessed
+    });
   }
 
   guess(e) {
@@ -115,10 +112,9 @@ class Hangman extends Component {
       this.setState(state => {
         state.remainingGuesses--;
       });
-      this.setState(state => {
-        state.guessedLetters += state.userGuess;
-      });
-      //   this.updateHTML();
+      this.setState(state => ({
+        guessedLetters: (state.guessedLetters += state.userGuess)
+      }));
       this.check();
     } else {
       this.setState(state => {
@@ -158,54 +154,35 @@ class Hangman extends Component {
     return false;
   }
 
-  //   updateHTML(game) {
-  //     document.getElementById('wins').innerHTML = `Wins: ${this.wins}`;
-  //     document.getElementById('losses').innerHTML = `Losses: ${this.losses}`;
-  //     if (game) {
-  //       document.getElementById('word-being-guessed').innerHTML = '';
-  //       document.getElementById('letters-already-guessed').innerHTML = '';
-  //       document.getElementById('number-of-guesses').innerHTML = '';
-  //       if (game === 'win') {
-  //         document.getElementById('game-over').innerHTML =
-  //           'Correct!<br/><br/>Press Space to play again';
-  //       } else if (game === 'loss') {
-  //         document.getElementById(
-  //           'game-over'
-  //         ).innerHTML = `The correct movie was ${
-  //           this.moviePick
-  //         }!<br/><br/>Press Space to play again`;
-  //       }
-  //     } else {
-  //       document.getElementById(
-  //         'word-being-guessed'
-  //       ).innerHTML = this.wordBeingGuessed;
-  //       document.getElementById(
-  //         'letters-already-guessed'
-  //       ).innerHTML = `You have already guessed: ${this.guessedLetters}`;
-  //       document.getElementById('number-of-guesses').innerHTML = `You have ${
-  //         this.remainingGuesses
-  //       } guesses left`;
-  //     }
-  //   }
-
   check() {
     if (this.state.wordBeingGuessed.indexOf('_ ' && '_') === -1) {
-      this.setState(state => {
-        state.wins++;
-      });
-      //   this.updateHTML('win');
-      this.resetGame();
+      this.setState(state => ({
+        status: 'won',
+        wins: state.wins + 1
+      }));
+      this.resetGame('win');
     } else if (this.state.remainingGuesses === 0) {
-      this.setState(state => {
-        state.losses++;
-      });
-      //   this.updateHTML('loss');
-      this.resetGame();
+      this.setState(state => ({
+        status: 'lost',
+        losses: state.losses + 1
+      }));
+      this.resetGame('lost');
     }
   }
 
-  resetGame() {
+  resetGame(gameStatus) {
+    if (gameStatus === 'win') {
+      this.setState({ display: 'Correct!' });
+      console.log('gamestatus win')
+    }
+    if (gameStatus === 'lost') {
+      this.setState({
+        display: `The correct movie was ${this.state.moviePick}`
+      });
+      console.log('gamestatus lost')
+    } 
     this.setState({
+      gameOn: false,
       remainingGuesses: 5,
       wordBeingGuessed: '',
       guessedLetters: '',
@@ -226,34 +203,30 @@ class Hangman extends Component {
   }
 
   render() {
+    const wins = this.state.wins;
+    const losses = this.state.losses;
+    const wordBeingGuessed = this.state.wordBeingGuessed;
+    const guessedLetters = this.state.guessedLetters;
+    const remainingGuesses = this.state.remainingGuesses;
+    const gameOn = this.state.gameOn;
+
     return (
       <div style={styles.game}>
         <h1 style={styles.text}>Hangman!</h1>
         <br />
         <h2 style={styles.text}>Tarantino Movies Edition</h2>
         <br />
-        <h3 style={styles.text} id="get-started">
-          Press Space to play!
-        </h3>
-        <h3 style={styles.text} id="wins">
-          Wins: {this.state.wins}
-        </h3>
-        <h3 style={styles.text} id="losses">
-          Losses: {this.state.losses}
-        </h3>
+        <h3 style={styles.text}>{gameOn ? '' : 'Press Space to play!'}</h3>
+        <br/>
+        <h3 style={styles.text}>{gameOn ? '' : `Wins: ${wins}`}</h3>
+        <h3 style={styles.text}>{gameOn ? '' : `Losses: ${losses}`}</h3>
         <br />
-        <h2 style={styles.text} id="game-over">
-          Game Over
-        </h2>
-        <h3 style={styles.text} id="word-being-guessed">
-          {this.state.wordBeingGuessed}
-        </h3>
+        <h2 style={styles.text}>{this.state.display}</h2>
+        <h3 style={styles.text}>{gameOn ? wordBeingGuessed : ''}</h3>
         <br style={styles.text} />
-        <h4 style={styles.text} id="letters-already-guessed">
-          {this.state.guessedLetters}
-        </h4>
-        <h4 style={styles.text} id="number-of-guesses">
-          {this.state.remainingGuesses}
+        <h4 style={styles.text}>{gameOn ? guessedLetters : ''}</h4>
+        <h4 style={styles.text}>
+          {gameOn ? `Remaining Guesses: ${remainingGuesses}` : ''}
         </h4>
       </div>
     );
