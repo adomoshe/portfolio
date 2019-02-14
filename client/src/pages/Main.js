@@ -22,7 +22,7 @@ class Main extends Component {
         <Projects />
         <Education />
         <Experience />
-        <Footer niki={true} />
+        <Footer niki />
       </div>
     );
   }

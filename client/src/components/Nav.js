@@ -49,14 +49,14 @@ const StyledIconButton = styled(IconButton)`
 `;
 
 const StyledBtn = styled.button`
-background-color: transparent;
-border: none;
-padding: 0;
+  background-color: transparent;
+  border: none;
+  padding: 0;
 
-:focus {
-  outline: none;
-}
-`
+  :focus {
+    outline: none;
+  }
+`;
 
 class Nav extends React.Component {
   state = {
@@ -90,6 +90,7 @@ class Nav extends React.Component {
   }
 
   render() {
+    document.activeElement.blur();
     const { anchorEl, open } = this.state;
     return (
       <nav style={styles.nav}>
@@ -135,14 +136,12 @@ class Nav extends React.Component {
           </Menu>
         </div>
         <StyledBtn
-        aria-label="Scroll to top"
+          aria-label="Scroll to top"
           onClick={() => {
             this.scrollAnimate();
           }}
         >
-          <h2 style={styles.navTitle}>
-            Ado
-          </h2>
+          <h2 style={styles.navTitle}>Ado</h2>
         </StyledBtn>
         {/* Span with FontAwesome buttons as external links */}
         <span className="nav-buttons" style={styles.navBtns}>

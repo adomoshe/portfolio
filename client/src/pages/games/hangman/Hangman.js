@@ -173,14 +173,14 @@ class Hangman extends Component {
   resetGame(gameStatus) {
     if (gameStatus === 'win') {
       this.setState({ display: 'Correct!' });
-      console.log('gamestatus win')
+      console.log('gamestatus win');
     }
     if (gameStatus === 'lost') {
       this.setState({
         display: `The correct movie was ${this.state.moviePick}`
       });
-      console.log('gamestatus lost')
-    } 
+      console.log('gamestatus lost');
+    }
     this.setState({
       gameOn: false,
       remainingGuesses: 5,
@@ -217,7 +217,7 @@ class Hangman extends Component {
         <h2 style={styles.text}>Tarantino Movies Edition</h2>
         <br />
         <h3 style={styles.text}>{gameOn ? '' : 'Press Space to play!'}</h3>
-        <br/>
+        <br />
         <h3 style={styles.text}>{gameOn ? '' : `Wins: ${wins}`}</h3>
         <h3 style={styles.text}>{gameOn ? '' : `Losses: ${losses}`}</h3>
         <br />
