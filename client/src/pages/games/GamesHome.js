@@ -6,6 +6,7 @@ import { Title } from '../../components/StyledTags';
 import GameImage from './components/GamesDisplay';
 
 import hangmanImg from './img/hangman.png';
+import crystalImg from './img/crystal.png';
 
 const styles = {
   row: {
@@ -36,6 +37,9 @@ class GamesHome extends Component {
           <div style={styles.div}>
             <Link to={`${currentURL}/hangman`} style={styles.link}>
               <GameImage picSource={hangmanImg}>Hangman</GameImage>
+            </Link>
+            <Link to={`${currentURL}/crystal_collector`} style={styles.link}>
+              <GameImage picSource={crystalImg}>Crystal Collector</GameImage>
             </Link>
           </div>
         </div>

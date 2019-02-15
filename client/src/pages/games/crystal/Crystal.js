@@ -21,7 +21,9 @@ const styles = {
     color: 'white'
   },
   button: {
-    margin: 'auto'
+    margin: 'auto',
+    fontSize: '1.5rem',
+    fontWeight: '900'
   },
   crystal: {
     display: 'block',
@@ -82,18 +84,19 @@ class Crystal extends Component {
 
     if (playerNumber === goalNumber) {
       this.setState(state => ({ wins: state.wins + 1 }));
-      this.resetGame();
+      this.resetGame(true);
     } else if (playerNumber > goalNumber) {
       this.setState(state => ({ losses: state.losses + 1 }));
-      this.resetGame();
+      this.resetGame(false);
     } else {
       return;
     }
   }
 
-  resetGame() {
+  resetGame(gameWon) {
     this.setState({
       playing: false,
+      gameWon: gameWon,
       playerNumber: 0,
       goalNumber: 0,
       crystal1: 0,
@@ -115,6 +118,7 @@ class Crystal extends Component {
     const goalNumber = this.state.goalNumber;
     const playerNumber = this.state.playerNumber;
     const playing = this.state.playing;
+    const gameWon = this.state.gameWon;
 
     return (
       <div className="row" style={styles.game}>
@@ -132,24 +136,37 @@ class Crystal extends Component {
           ))}
         </div>
         <div className="col-sm-6 text-center">
-          <h3 style={styles.text}>{playing? '': `Wins: ${wins}`}</h3>
-          <h3 style={styles.text}>{playing? '': `Losses: ${losses}`}</h3>
-          <h3 style={styles.text}>{playing? `Goal Number: ${goalNumber}`: ''}</h3>
-          <h3 style={styles.text}>{playing? `Player Number: ${playerNumber}`: ''}</h3>
+          {playing ? (
+            <span>
+              <h3 style={styles.text}>Goal Number: {goalNumber}</h3>
+              <h3 style={styles.text}>Player Number: {playerNumber}</h3>
+            </span>
+          ) : (
+            <span>
+              {!wins && !losses ? (
+                <h2 style={styles.text}>Crystal Collector</h2>
+              ) : (
+                <span>
+                  <h2 style={styles.text}>
+                    {gameWon ? 'Congrats!' : 'Oh No!'}
+                  </h2>
+                  <h3 style={styles.text}>Wins: {wins}</h3>
+                  <h3 style={styles.text}>Losses: {losses}</h3>
+                </span>
+              )}
+              <br />
+              <button
+                style={styles.button}
+                className="btn btn-primary"
+                onClick={this.startClick}
+              >
+                {!wins && !losses ? 'Press to Play' : 'Play Again?'}
+              </button>
+            </span>
+          )}
           <br />
-          <h2 style={styles.text}>Congrats!</h2>
-          <h2 style={styles.text}>Oh No!</h2>
-          <button
-            style={styles.button}
-            className="btn btn-primary"
-            onClick={this.startClick}
-          >
-            Play Again?
-          </button>
         </div>
         <div className="col-sm-3">
-          <h2 style={styles.text}>Welcome to Crystal Collector!</h2>
-          <br />
           <h3 style={styles.text}>Instructions:</h3>
           <p style={styles.text}>
             When pressed, each crystal adds a random number between 1-19 to
