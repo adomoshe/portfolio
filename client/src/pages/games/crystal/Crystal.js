@@ -6,6 +6,8 @@ import crystal2 from './img/crystal2.png';
 import crystal3 from './img/crystal3.png';
 import crystal4 from './img/crystal4.png';
 
+const crystalArr = [crystal1, crystal2, crystal3, crystal4];
+
 const styles = {
   game: {
     marginTop: '10vh'
@@ -27,24 +29,22 @@ const styles = {
   }
 };
 
-const CrystalImg = ({ imgSource }) => (
-  <img style={styles.crystal} src={imgSource} alt="Crystal" />
-);
-
 class Crystal extends Component {
   constructor(props) {
     super(props);
     this.state = {
       wins: 0,
       losses: 0,
-      playGame: true,
+      playing: false,
       playerNumber: 0,
       goalNumber: 0,
-      diamondOne: 0,
-      diamondTwo: 0,
-      diamondThree: 0,
-      diamondFour: 0
+      crystal1: 0,
+      crystal2: 0,
+      crystal3: 0,
+      crystal4: 0
     };
+    this.crystalClick = this.crystalClick.bind(this);
+    this.startClick = this.startClick.bind(this);
   }
 
   componentWillMount() {
@@ -53,7 +53,52 @@ class Crystal extends Component {
     }
   }
 
+  startClick() {
+    console.log(this);
+    this.setState({
+      playing: true,
+      goalNumber: Math.floor(Math.random() * 101 + 19),
+      crystal1: Math.floor(Math.random() * 12 + 1),
+      crystal2: Math.floor(Math.random() * 12 + 1),
+      crystal3: Math.floor(Math.random() * 12 + 1),
+      crystal4: Math.floor(Math.random() * 12 + 1)
+    });
+  }
 
+  crystalClick({ target }) {
+    const name = target.name;
+    this.setState(state => ({
+      playerNumber: (state.playerNumber += state[name])
+    }));
+    this.check();
+  }
+
+  check() {
+    const goalNumber = this.state.goalNumber;
+    const playerNumber = this.state.playerNumber;
+
+    if (playerNumber === goalNumber) {
+      this.setState(state => ({ wins: state.wins + 1 }));
+      this.resetGame();
+    } else if (playerNumber > goalNumber) {
+      this.setState(state => ({ losses: state.losses + 1 }));
+      this.resetGame();
+    } else {
+      return;
+    }
+  }
+
+  resetGame() {
+    this.setState({
+      playing: false,
+      playerNumber: 0,
+      goalNumber: 0,
+      crystal1: 0,
+      crystal2: 0,
+      crystal3: 0,
+      crystal4: 0
+    });
+  }
 
   componentWillUnmount() {
     for (let i in styles.body) {
@@ -62,31 +107,38 @@ class Crystal extends Component {
   }
 
   render() {
+    const wins = this.state.wins;
+    const losses = this.state.losses;
+    const goalNumber = this.state.goalNumber;
+    const playerNumber = this.state.playerNumber;
+
     return (
       <div className="row" style={styles.game}>
         <div className="col-sm-3" align="center">
-          <CrystalImg imgSource={crystal1} />
-          <CrystalImg imgSource={crystal2} />
-          <CrystalImg imgSource={crystal3} />
-          <CrystalImg imgSource={crystal4} />
+          {crystalArr.map((crystalImg, index) => (
+            <img
+              name={'crystal' + (index + 1)}
+              type="button"
+              style={styles.crystal}
+              src={crystalImg}
+              key={index}
+              alt="Crystal"
+              onClick={this.crystalClick}
+            />
+          ))}
         </div>
         <div className="col-sm-6 text-center">
-          <h3 style={styles.text} id="wins" />
-          <h3 style={styles.text} id="losses" />
-          <h3 style={styles.text} id="goalNumber" />
-          <h3 style={styles.text} id="playerNumber" />
+          <h3 style={styles.text}>Wins: {wins}</h3>
+          <h3 style={styles.text}>Losses: {losses}</h3>
+          <h3 style={styles.text}>Goal Number: {goalNumber}</h3>
+          <h3 style={styles.text}>Player Number: {playerNumber}</h3>
           <br />
-          <h4 style={styles.text} id="winAlert">
-            Congrats!
-          </h4>
-          <h4 style={styles.text} id="loseAlert">
-            Oh No!
-          </h4>
+          <h2 style={styles.text}>Congrats!</h2>
+          <h2 style={styles.text}>Oh No!</h2>
           <button
             style={styles.button}
-            type="button"
             className="btn btn-primary"
-            id="playAgain"
+            onClick={this.startClick}
           >
             Play Again?
           </button>
