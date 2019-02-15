@@ -35,6 +35,7 @@ class Footer extends Component {
   };
 
   render() {
+    const niki = this.props.niki;
     return (
       <footer style={styles.footer}>
         <div className="row justify-content-center">
@@ -42,7 +43,7 @@ class Footer extends Component {
             <Source />
             <p style={styles.p}>
               Source code <br />
-              {this.props.niki ? (
+              {niki ? (
                 <a
                   aria-label="Link"
                   href="https://www.linkedin.com/in/niki-moshe-3b038b4/"
