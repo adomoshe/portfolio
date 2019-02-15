@@ -66,6 +66,9 @@ class Crystal extends Component {
   }
 
   crystalClick({ target }) {
+    if (!this.state.playing) {
+      return;
+    }
     const name = target.name;
     this.setState(state => ({
       playerNumber: (state.playerNumber += state[name])
@@ -111,6 +114,7 @@ class Crystal extends Component {
     const losses = this.state.losses;
     const goalNumber = this.state.goalNumber;
     const playerNumber = this.state.playerNumber;
+    const playing = this.state.playing;
 
     return (
       <div className="row" style={styles.game}>
@@ -128,10 +132,10 @@ class Crystal extends Component {
           ))}
         </div>
         <div className="col-sm-6 text-center">
-          <h3 style={styles.text}>Wins: {wins}</h3>
-          <h3 style={styles.text}>Losses: {losses}</h3>
-          <h3 style={styles.text}>Goal Number: {goalNumber}</h3>
-          <h3 style={styles.text}>Player Number: {playerNumber}</h3>
+          <h3 style={styles.text}>{playing? '': `Wins: ${wins}`}</h3>
+          <h3 style={styles.text}>{playing? '': `Losses: ${losses}`}</h3>
+          <h3 style={styles.text}>{playing? `Goal Number: ${goalNumber}`: ''}</h3>
+          <h3 style={styles.text}>{playing? `Player Number: ${playerNumber}`: ''}</h3>
           <br />
           <h2 style={styles.text}>Congrats!</h2>
           <h2 style={styles.text}>Oh No!</h2>
