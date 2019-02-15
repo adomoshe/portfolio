@@ -5,7 +5,7 @@ import { Title } from '../../components/StyledTags';
 
 import GameImage from './components/GamesDisplay';
 
-import hangmanImg from './img/hangman.png'
+import hangmanImg from './img/hangman.png';
 
 const styles = {
   row: {
@@ -13,13 +13,12 @@ const styles = {
     paddingBottom: '12vh'
   },
   div: {
-float: 'left',
-alignContent: 'center'
-
+    display: 'block'
   },
   link: {
     color: 'black',
     textAlign: 'center',
+    margin: 'auto'
   }
 };
 
@@ -29,14 +28,15 @@ class GamesHome extends Component {
   }
 
   render() {
+      const currentURL = this.props.match.url
     return (
       <div className="row justify-content-center" style={styles.row}>
         <Title>Games</Title>
-        <div className="col-sm-6 justify-content-center">
-        <div style={styles.div}>
-          <Link to={`${this.props.match.url}/hangman`} style={styles.link}>
-            <GameImage picSource={hangmanImg}>Hangman</GameImage>
-          </Link>
+        <div className="col-sm-6">
+          <div style={styles.div}>
+            <Link to={`${currentURL}/hangman`} style={styles.link}>
+              <GameImage picSource={hangmanImg}>Hangman</GameImage>
+            </Link>
           </div>
         </div>
       </div>

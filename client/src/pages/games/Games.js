@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import GamesHome from './GamesHome';
 import Hangman from './hangman/Hangman';
+import Crystal from './crystal/Crystal';
 
 import Footer from '../../components/Footer';
 
@@ -20,6 +21,7 @@ const Games = ({ match }) => (
         )}
       />
       <Route exact path={`${match.url}/hangman`} component={Hangman} />
+      <Route exact path={`${match.url}/crystal_collector`} component={Crystal} />
     </Switch>
   </Router>
 );
