@@ -173,13 +173,11 @@ class Hangman extends Component {
   resetGame(gameStatus) {
     if (gameStatus === 'win') {
       this.setState({ display: 'Correct!' });
-      console.log('gamestatus win');
     }
     if (gameStatus === 'lost') {
       this.setState({
         display: `The correct movie was ${this.state.moviePick}`
       });
-      console.log('gamestatus lost');
     }
     this.setState({
       gameOn: false,
@@ -230,9 +228,9 @@ class Hangman extends Component {
             <h3 style={styles.text}>Wins: {wins}</h3>
             <h3 style={styles.text}>Losses: {losses}</h3>
             <br />
+            <h2 style={styles.text}>{this.state.display}</h2>
           </span>
         )}
-        <h2 style={styles.text}>{this.state.display}</h2>
       </div>
     );
   }
