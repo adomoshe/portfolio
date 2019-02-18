@@ -173,13 +173,13 @@ class Hangman extends Component {
   resetGame(gameStatus) {
     if (gameStatus === 'win') {
       this.setState({ display: 'Correct!' });
-      console.log('gamestatus win')
+      console.log('gamestatus win');
     }
     if (gameStatus === 'lost') {
       this.setState({
         display: `The correct movie was ${this.state.moviePick}`
       });
-      console.log('gamestatus lost')
+      console.log('gamestatus lost');
     }
     this.setState({
       gameOn: false,
@@ -216,18 +216,23 @@ class Hangman extends Component {
         <br />
         <h2 style={styles.text}>Tarantino Movies Edition</h2>
         <br />
-        <h3 style={styles.text}>{gameOn ? null : 'Press Space to play!'}</h3>
-        <br/>
-        <h3 style={styles.text}>{gameOn ? null : `Wins: ${wins}`}</h3>
-        <h3 style={styles.text}>{gameOn ? null : `Losses: ${losses}`}</h3>
-        <br />
+        {gameOn ? (
+          <span>
+            <h3 style={styles.text}>{wordBeingGuessed}</h3>
+            <br />
+            <h4 style={styles.text}>{guessedLetters}</h4>
+            <h4 style={styles.text}>Remaining Guesses: {remainingGuesses}</h4>
+          </span>
+        ) : (
+          <span>
+            <h3 style={styles.text}>Press Space to play!</h3>
+            <br />
+            <h3 style={styles.text}>Wins: {wins}</h3>
+            <h3 style={styles.text}>Losses: {losses}</h3>
+            <br />
+          </span>
+        )}
         <h2 style={styles.text}>{this.state.display}</h2>
-        <h3 style={styles.text}>{gameOn ? wordBeingGuessed : null}</h3>
-        <br style={styles.text} />
-        <h4 style={styles.text}>{gameOn ? guessedLetters : null}</h4>
-        <h4 style={styles.text}>
-          {gameOn ? `Remaining Guesses: ${remainingGuesses}` : null}
-        </h4>
       </div>
     );
   }
