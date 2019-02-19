@@ -123,6 +123,11 @@ class Nav extends React.Component {
                 <h3>Home</h3>
               </MenuItem>
             </StyledLink>
+            <a href>
+              <MenuItem onClick={this.menuClick}>
+                <h3>Resume</h3>
+              </MenuItem>
+            </a>
             <StyledLink to={'/blog'}>
               <MenuItem onClick={this.menuClick}>
                 <h3>Blog</h3>
