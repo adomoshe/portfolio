@@ -42,6 +42,12 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const StyledRegLink = styled.a`
+  :hover {
+    text-decoration: none;
+  }
+`;
+
 const StyledIconButton = styled(IconButton)`
   :focus {
     outline: none !important;
@@ -123,11 +129,16 @@ class Nav extends React.Component {
                 <h3>Home</h3>
               </MenuItem>
             </StyledLink>
-            <a href>
+            <StyledRegLink
+              aria-label="Link"
+              href="https://drive.google.com/file/d/1U2js0HrZ4UjRTq4rrW70ZfFbVTOKsdf0/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <MenuItem onClick={this.menuClick}>
                 <h3>Resume</h3>
               </MenuItem>
-            </a>
+            </StyledRegLink>
             <StyledLink to={'/blog'}>
               <MenuItem onClick={this.menuClick}>
                 <h3>Blog</h3>
