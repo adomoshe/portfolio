@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Title } from '../../components/StyledTags';
-
 import GameImage from './components/GamesDisplay';
-
 import hangmanImg from './img/hangman.png';
 import crystalImg from './img/crystal.png';
 
