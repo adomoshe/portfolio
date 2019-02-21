@@ -30,7 +30,7 @@ const LinkedIn = () => {
 
 const Medium = () => (
   <IconButton
-    aria-label="LinkedIn Link"
+    aria-label="Medium Link"
     href="https://medium.com/@adoran.moshe"
     target="_blank"
     rel="noopener noreferrer"
@@ -51,7 +51,7 @@ const Email = () => (
 
 const Source = () => (
   <Button
-    aria-label="Email Link"
+    aria-label="Github Link"
     href="https://github.com/adomoshe/portfolio"
     target="_blank"
     rel="noopener noreferrer"
