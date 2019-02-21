@@ -10,7 +10,6 @@ import img4 from './img/4.jpg';
 import img5 from './img/5.jpg';
 import img6 from './img/6.jpg';
 import img7 from './img/7.jpg';
-import img8 from './img/8.jpg';
 
 const styles = {
   title: {
@@ -198,7 +197,6 @@ class Cuba extends Component {
           <br />
           <br />
           <BlogImage picSource={img3}>Casa Particular I stayed at</BlogImage>
-          <BlogImage picSource={img4} />
           <p>
             &emsp;Since my casa particular was on the outskirts of the most
             touristy areas in the city, restaurants nearby serviced mostly
@@ -212,7 +210,7 @@ class Cuba extends Component {
           </p>
           <br />
           <br />
-          <BlogImage picSource={img5}>
+          <BlogImage picSource={img4}>
             Street meat, would probably steer clear
           </BlogImage>
           <p>
@@ -236,7 +234,7 @@ class Cuba extends Component {
           </p>
           <br />
           <br />
-          <BlogImage picSource={img6}>
+          <BlogImage picSource={img5}>
             Empanada and Cigar at Plaza de Armas
           </BlogImage>
           <h2>Restaurants</h2>
@@ -266,10 +264,10 @@ class Cuba extends Component {
           </p>
           <br />
           <br />
-          <BlogImage picSource={img7}>
+          <BlogImage picSource={img6}>
             Fabrica de Arte Cubano main stage
           </BlogImage>
-          <BlogImage picSource={img8} />
+          <BlogImage picSource={img7} />
           <br />
           <h2>Nightlife</h2>
           <br />
