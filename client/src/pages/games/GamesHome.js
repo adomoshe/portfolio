@@ -12,7 +12,7 @@ const styles = {
     paddingBottom: '12vh'
   },
   div: {
-    display: 'block'
+    align: 'center',
   },
   link: {
     color: 'black',
@@ -31,15 +31,13 @@ class GamesHome extends Component {
     return (
       <div className="row justify-content-center" style={styles.row}>
         <Title>Games</Title>
-        <div className="col-sm-6">
-          <div style={styles.div}>
+        <div style={styles.div} align="center">
             <Link to={`${currentURL}/hangman`} style={styles.link}>
               <GameImage picSource={hangmanImg}>Hangman</GameImage>
             </Link>
             <Link to={`${currentURL}/crystal_collector`} style={styles.link}>
               <GameImage picSource={crystalImg}>Crystal Collector</GameImage>
             </Link>
-          </div>
         </div>
       </div>
     );

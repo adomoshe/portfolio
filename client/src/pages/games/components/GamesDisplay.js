@@ -2,9 +2,9 @@ import React from 'react';
 
 const styles = {
   picFigure: {
-    float: 'left',
     width: '66vh',
-    textAlign: 'center'
+    textAlign: 'center',
+    display: 'block'
   },
   pics: {
     boxShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
@@ -18,10 +18,12 @@ const styles = {
 };
 
 const GameImage = ({ picSource, children }) => (
-    <figure style={styles.picFigure}>
-      <img src={picSource} alt="Game pic" style={styles.pics} />
-        <figcaption style={styles.caption}><h3>{children}</h3></figcaption>
-    </figure>
-  );
+  <figure style={styles.picFigure}>
+    <img src={picSource} alt="Game pic" style={styles.pics} />
+    <figcaption style={styles.caption}>
+      <h3>{children}</h3>
+    </figcaption>
+  </figure>
+);
 
 export default GameImage;
