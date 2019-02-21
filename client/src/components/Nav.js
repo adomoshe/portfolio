@@ -11,6 +11,7 @@ import Menu from '@material-ui/core/Menu';
 import styled from 'styled-components';
 
 import { Github, LinkedIn, Medium, Email } from './Buttons';
+import breakpoints from './breakpoints.js';
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -98,6 +99,73 @@ class Nav extends React.Component {
   render() {
     document.activeElement.blur();
     const { anchorEl, open } = this.state;
+
+    const breakpointLinks = () => {
+      if (window.innerWidth <= breakpoints.s) {
+        return (
+          <span>
+            <StyledIconButton
+            aria-owns={open ? 'links' : undefined}
+            aria-haspopup="true"
+            style={styles.menuBtn}
+            onClick={this.menuClick}
+          >
+            <MenuIcon />
+          </StyledIconButton>
+          <Menu
+            anchorEl={anchorEl}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right'
+            }}
+            disableAutoFocusItem={true}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right'
+            }}
+            onClose={this.menuClick}
+            open={open}
+          >
+            <StyledLink to={'/'}>
+              <MenuItem onClick={this.menuClick}>
+                <h3>Github</h3>
+              </MenuItem>
+            </StyledLink>
+            <StyledRegLink
+              aria-label="Link"
+              href="https://drive.google.com/file/d/1U2js0HrZ4UjRTq4rrW70ZfFbVTOKsdf0/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MenuItem onClick={this.menuClick}>
+                <h3>LinkedIn</h3>
+              </MenuItem>
+            </StyledRegLink>
+            <StyledLink to={'/blog'}>
+              <MenuItem onClick={this.menuClick}>
+                <h3>Medium</h3>
+              </MenuItem>
+            </StyledLink>
+            <StyledLink to={'/games'}>
+              <MenuItem onClick={this.menuClick}>
+                <h3>Email</h3>
+              </MenuItem>
+            </StyledLink>
+          </Menu>
+          </span>
+        );
+      } else {
+        return (
+          <span style={styles.navBtns}>
+            <Github />
+            <LinkedIn />
+            <Medium />
+            <Email />
+          </span>
+        );
+      }
+    };
+
     return (
       <nav style={styles.nav}>
         <div>
@@ -110,7 +178,6 @@ class Nav extends React.Component {
             <MenuIcon />
           </StyledIconButton>
           <Menu
-            id="menu-appbar"
             anchorEl={anchorEl}
             anchorOrigin={{
               vertical: 'top',
@@ -159,13 +226,7 @@ class Nav extends React.Component {
         >
           <h2 style={styles.navTitle}>Ado</h2>
         </StyledBtn>
-        {/* Span with FontAwesome buttons as external links */}
-        <span className="nav-buttons" style={styles.navBtns}>
-          <Github />
-          <LinkedIn />
-          <Medium />
-          <Email />
-        </span>
+        {breakpointLinks()}
       </nav>
     );
   }
