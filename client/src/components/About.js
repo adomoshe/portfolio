@@ -8,11 +8,11 @@ const styles = {
 
 const About = () => {
   return (
-    <div className="row" style={styles.rootDiv}>
+    <div style={styles.rootDiv}>
+      <div className="row justify-content-center">
       <div className="col-sm-8">
         <Title>Adoran Moshe</Title>
-      </div>
-      <div className="row justify-content-center">
+        </div>
         <div className="col-sm-6">
           <p style={styles.p}>
             Full-stack web developer with experience in IT recruiting.
