@@ -74,6 +74,7 @@ const MainCarousel = () => (
   <div style={styles.carouselDiv}>
     <Carousel
       showStatus={false}
+      showIndicators={false}
       showThumbs={false}
       infiniteLoop={true}
       width="100%"
@@ -81,6 +82,7 @@ const MainCarousel = () => (
       stopOnHover={false}
       interval={8000}
       transitionTime={1000}
+      swipeable={false}
       style={styles.carousel}
     >
       {picsArr.map((pic, index) => {

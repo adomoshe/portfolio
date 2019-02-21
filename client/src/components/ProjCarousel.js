@@ -75,6 +75,7 @@ class ProjCarousel extends Component {
           stopOnHover={false}
           interval={7000}
           transitionTime={800}
+          swipeable={false}
         >
           {this.picsArr.map((pic, index) => {
             return (
