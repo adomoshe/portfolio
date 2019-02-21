@@ -18,7 +18,7 @@ const Projects = () => {
         <Title>Projects</Title>
       </div>
       <div className="row justify-content-center">
-        <div className="col-sm-4">
+        <div className="col-sm-3">
           <ProjCarousel show="untrending" />
           <br />
           <h2 style={styles.projectTitle}>Untrending</h2>
@@ -54,7 +54,7 @@ const Projects = () => {
           </p>
           </div>
           <br />
-          <div className="col-sm-4">
+          <div className="col-sm-3">
           <ProjCarousel show="nosh" />
           <br />
           <h2 style={styles.projectTitle}>Nosh</h2>

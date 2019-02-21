@@ -42,7 +42,7 @@ const Skills = () => {
         <Title>Technical Skills</Title>
       </div>
       <div className="row justify-content-center">
-        <div className="col-sm-4">
+        <div className="col-sm-3">
           <h3 style={styles.section}>Front</h3>
           <ul>
             {frontSkillsArr.map((skill, index) => {
@@ -50,7 +50,7 @@ const Skills = () => {
             })}
           </ul>
         </div>
-        <div className="col-sm-4">
+        <div className="col-sm-3">
           <h3 style={styles.section}>Back</h3>
           <ul>
             {backSkillsArr.map((skill, index) => {

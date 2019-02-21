@@ -23,14 +23,14 @@ const untrendingPicsArr = [uimg1, uimg2, uimg3, uimg4, uimg5];
 const styles = {
   carouselDiv: {
     boxShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
-    height: '30vh',
-    width: '56vh'
+    height: 'auto',
+    width: '100%'
   },
   imgDiv: {
     marginTop: 0,
     marginLeft: 0,
-    height: '30vh',
-    width: '56vh'
+    height: 'auto',
+    width: '100%'
   },
   img: {
     marginTop: 0,
