@@ -11,7 +11,7 @@ import Menu from '@material-ui/core/Menu';
 import styled from 'styled-components';
 
 import { Github, LinkedIn, Medium, Email } from './Buttons';
-import breakpoints from './breakpoints.js';
+import breakpoints from './breakpoints';
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -83,7 +83,7 @@ class ContactMenu extends React.Component {
   render() {
     document.activeElement.blur();
     const { anchorEl, open } = this.state;
-    
+
     return (
       <div style={styles.s}>
         <StyledBtn

@@ -1,12 +1,14 @@
 import React from 'react';
 
+import breakpoints from '../../../components/breakpoints';
+
 const styles = {
   picFigure: {
     float: 'left',
     width: '100%',
     textAlign: 'center'
   },
-  pics: {
+  pic: {
     boxShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
     marginBottom: '3vh',
     marginTop: '3vh',
@@ -42,43 +44,44 @@ const styles = {
   }
 };
 
-const BlogImage = ({ picSource, children }) => {
-  return (
-    <figure style={styles.picFigure}>
-      <img src={picSource} alt="Blog pic" style={styles.pics} />
-      {children ? (
-        <figcaption style={styles.caption}>{children}</figcaption>
-      ) : null}
-    </figure>
-  );
-};
+if (window.innerWidth >= breakpoints.l) {
+  styles.picFigure.width = '66vh';
+  styles.pic.width = '60vh';
+}
 
-const BlogVideo = ({ vidSource }) => {
-  return (
-    <div style={styles.root}>
-      <figure style={styles.vidFigure}>
-        <iframe
-          title="Andres GoPro Video"
-          style={styles.vid}
-          src={vidSource}
-          frameBorder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-        <figcaption style={styles.vidCaption}>
-          <a
-            aria-label="Link"
-            href="https://www.youtube.com/channel/UCfGI5MYiqntkDQDwNPq-FQg"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={styles.a}
-          >
-            Video by Andres Granado
-          </a>
-        </figcaption>
-      </figure>
-    </div>
-  );
-};
+const BlogImage = ({ picSource, children }) => (
+  <figure style={styles.picFigure}>
+    <img src={picSource} alt="Blog pic" style={styles.pic} />
+    {children ? (
+      <figcaption style={styles.caption}>{children}</figcaption>
+    ) : null}
+  </figure>
+);
+
+const BlogVideo = ({ vidSource }) => (
+  <div style={styles.root}>
+    <figure style={styles.vidFigure}>
+      <iframe
+        title="Andres GoPro Video"
+        style={styles.vid}
+        src={vidSource}
+        frameBorder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+      <figcaption style={styles.vidCaption}>
+        <a
+          aria-label="Link"
+          href="https://www.youtube.com/channel/UCfGI5MYiqntkDQDwNPq-FQg"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={styles.a}
+        >
+          Video by Andres Granado
+        </a>
+      </figcaption>
+    </figure>
+  </div>
+);
 
 export { BlogImage, BlogVideo };
