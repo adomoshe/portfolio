@@ -8,6 +8,9 @@ import img3 from './img/arrival/3.jpg';
 import img4 from './img/arrival/4.jpg';
 
 const styles = {
+  root: {
+    marginTop: '6vh'
+  },
   title: {
     marginLeft: 0
   }
@@ -20,7 +23,7 @@ class Arrival extends Component {
 
   render() {
     return (
-      <div className="row justify-content-center">
+      <div className="row justify-content-center" style={styles.root}>
         <div className="col-sm-6">
           <h1 style={styles.title}>Arrival</h1>
           <BlogVideo vidSource="https://www.youtube.com/embed/oW-TotjvcxI" />

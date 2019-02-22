@@ -83,6 +83,7 @@ class ContactMenu extends React.Component {
   render() {
     document.activeElement.blur();
     const { anchorEl, open } = this.state;
+    
     return (
       <div style={styles.s}>
         <StyledBtn

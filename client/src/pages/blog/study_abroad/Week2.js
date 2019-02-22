@@ -13,6 +13,9 @@ import img8 from './img/week_2/8.jpg';
 import img9 from './img/week_2/9.jpg';
 
 const styles = {
+  root: {
+    marginTop: '6vh'
+  },
   title: {
     marginLeft: 0
   }
@@ -25,7 +28,7 @@ class Week2 extends Component {
 
   render() {
     return (
-      <div className="row justify-content-center">
+      <div className="row justify-content-center" style={styles.root}>
         <div className="col-sm-6">
           <h1 style={styles.title}>Week 2</h1>
           <BlogVideo vidSource="https://www.youtube.com/embed/cXi0i7VNNUo" />

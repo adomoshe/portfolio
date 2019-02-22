@@ -9,6 +9,9 @@ import img4 from './img/dublin/4.jpg';
 import img5 from './img/dublin/5.jpg';
 
 const styles = {
+  root: {
+    marginTop: '6vh'
+  },
   title: {
     marginLeft: 0
   }
@@ -18,10 +21,10 @@ class Dublin extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
-  
+
   render() {
     return (
-      <div className="row justify-content-center">
+      <div className="row justify-content-center" style={styles.root}>
         <div className="col-sm-6">
           <h1 style={styles.title}>Dublin</h1>
           <BlogImage picSource={img1} />

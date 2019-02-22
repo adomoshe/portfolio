@@ -5,8 +5,6 @@ const styles = {
   li: {
     listStyleType: 'none',
     marginLeft: '-1vw',
-    fontSize: '1.5rem',
-    fontWeight: '600'
   }
 };
 

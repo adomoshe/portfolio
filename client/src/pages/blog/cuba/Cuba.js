@@ -12,6 +12,9 @@ import img6 from './img/6.jpg';
 import img7 from './img/7.jpg';
 
 const styles = {
+  root: {
+    marginTop: '6vh'
+  },
   title: {
     align: 'center',
     marginLeft: 0
@@ -25,7 +28,7 @@ class Cuba extends Component {
   }
   render() {
     return (
-      <div className="row justify-content-center">
+      <div className="row justify-content-center" style={styles.root}>
         <div className="col-sm-6">
           <h1 style={styles.title}>
             Cuba, Important Pre-Departure and General Information (Trump Update)

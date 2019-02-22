@@ -2,6 +2,42 @@
   font-family: 'Poiret One', cursive !important;
 }
 
+@media (max-width: 575.98px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2,
+  b {
+    font-size: 1.5rem;
+  }
+
+  p,
+  h3,
+  li,
+  .links {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 576px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2,
+  b {
+    font-size: 2rem;
+  }
+
+  p,
+  h3,
+  li,
+  .links {
+    font-size: 1.5rem;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -10,14 +46,12 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
   font-weight: 900;
   margin: 2vw;
 }
 
 h2,
 b {
-  font-size: 2rem;
   font-weight: 900;
 }
 
@@ -25,12 +59,10 @@ p,
 h3,
 li,
 .links {
-  font-size: 1.5rem;
   font-weight: 600;
 }
 
 b {
-  font-size: 2rem;
   font-weight: 900;
   color: yellow;
 }

@@ -13,6 +13,9 @@ import img8 from './img/spring_break/8.jpg';
 import img9 from './img/spring_break/9.jpg';
 
 const styles = {
+  root: {
+    marginTop: '6vh'
+  },
   title: {
     marginLeft: 0
   }
@@ -24,7 +27,7 @@ class SpringBreak extends Component {
   }
   render() {
     return (
-      <div className="row justify-content-center">
+      <div className="row justify-content-center" style={styles.root}>
         <div className="col-sm-6">
           <h1 style={styles.title}>Spring Break</h1>
           <BlogVideo vidSource="https://www.youtube.com/embed/JztdKoEgv_Y" />
