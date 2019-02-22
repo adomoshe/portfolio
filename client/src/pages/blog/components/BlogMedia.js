@@ -3,13 +3,14 @@ import React from 'react';
 const styles = {
   picFigure: {
     float: 'left',
-    width: '66vh',
+    width: '100%',
     textAlign: 'center'
   },
   pics: {
     boxShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
-    margin: '3vh',
-    width: '60vh'
+    marginBottom: '3vh',
+    marginTop: '3vh',
+    width: '100%'
   },
   caption: {
     marginLeft: '3vh',
@@ -67,7 +68,7 @@ const BlogVideo = ({ vidSource }) => {
         <figcaption style={styles.vidCaption}>
           <a
             aria-label="Link"
-            href="https://www.instagram.com/agranadod/?hl=en"
+            href="https://www.youtube.com/channel/UCfGI5MYiqntkDQDwNPq-FQg"
             target="_blank"
             rel="noopener noreferrer"
             style={styles.a}
