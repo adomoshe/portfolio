@@ -15,17 +15,29 @@ const styles = {
     marginLeft: '3vh',
     marginRight: '3vh'
   },
+  root: {
+    width: '100%',
+    paddingBottom: '56.25%',
+    height: 0,
+    position: 'relative',
+    marginBottom: '8vh'
+  },
   vidFigure: {
-    margin: 'auto',
-    width: '96vh',
-    height: '61vh',
-    textAlign: 'center'
+    textAlign: 'center',
+    width: '100%',
+    height: '100%',
+    position: 'absolute'
   },
   vid: {
     boxShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
-    margin: '3vh',
-    width: '90vh',
-    height: '50.625vh'
+    width: '100%',
+    height: '100%'
+  },
+  vidCaption: {
+    position: ''
+  },
+  a: {
+    color: 'black'
   }
 };
 
@@ -42,17 +54,29 @@ const BlogImage = ({ picSource, children }) => {
 
 const BlogVideo = ({ vidSource }) => {
   return (
-    <figure style={styles.vidFigure}>
-      <iframe
-        title="Andres GoPro Video"
-        style={styles.vid}
-        src={vidSource}
-        frameBorder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      />
-      <figcaption>Video by Andres Granado</figcaption>
-    </figure>
+    <div style={styles.root}>
+      <figure style={styles.vidFigure}>
+        <iframe
+          title="Andres GoPro Video"
+          style={styles.vid}
+          src={vidSource}
+          frameBorder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+        <figcaption style={styles.vidCaption}>
+          <a
+            aria-label="Link"
+            href="https://www.instagram.com/agranadod/?hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={styles.a}
+          >
+            Video by Andres Granado
+          </a>
+        </figcaption>
+      </figure>
+    </div>
   );
 };
 
