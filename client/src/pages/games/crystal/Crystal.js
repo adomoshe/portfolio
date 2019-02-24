@@ -56,7 +56,6 @@ class Crystal extends Component {
   }
 
   startClick() {
-    console.log(this);
     this.setState({
       playing: true,
       goalNumber: Math.floor(Math.random() * 101 + 19),
@@ -72,10 +71,14 @@ class Crystal extends Component {
       return;
     }
     const name = target.name;
-    this.setState(state => ({
-      playerNumber: (state.playerNumber += state[name])
-    }));
-    this.check();
+    this.setState(
+      {
+        playerNumber: this.state.playerNumber + this.state[name]
+      },
+      () => {
+        this.check();
+      }
+    );
   }
 
   check() {
