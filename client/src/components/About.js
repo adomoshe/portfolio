@@ -15,12 +15,12 @@ const About = () => {
       <div className="row justify-content-center">
         <div className="col-sm-6">
           <p style={styles.p}>
-            Full-stack web developer with experience in IT recruiting.
-            Self-studied coding while finishing my degree, then supplemented
-            that knowledge at the UC Berkeley Extension Coding Bootcamp. Greatly
-            enjoy continuously learning new technologies and utilizing those
-            skills to build useful applications. Eager to invest time and
-            resources to further my knowledge and skills to excel my career.
+            Motivated full-stack web developer with experience in IT recruiting.
+            University of Tampa business school and UC Berkeley Extension coding
+            bootcamp graduate. Passionate about writing clear, concise, and
+            efficient code that follows best practices, including accessibility
+            and SEO. Continuously learning new technologies and observing the
+            latest trends to build modern, intuitive applications.
           </p>
         </div>
       </div>
