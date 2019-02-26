@@ -7,7 +7,7 @@ const frontSkillsArr = [
   'React.js',
   'JavaScript (ES6)',
   'HTML5',
-  'CSS',
+  'CSS3',
   'Bootstrap',
   'Material UI',
   'jQuery'
