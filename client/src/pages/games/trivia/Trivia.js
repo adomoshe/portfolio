@@ -12,7 +12,9 @@ const styles = {
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover'
   },
-  card: {},
+  card: {
+    backgroundColor: 'rgba(255, 255, 255, .95)'
+  },
   btn: {
     fontSize: '1.5rem',
     fontWeight: '900'
@@ -22,8 +24,13 @@ const styles = {
 class Trivia extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
-    this.answerClick = this.answerClick.bind(this)
+    this.state = {
+      wins: 0,
+      losses: 0,
+      game: false,
+      question: 0
+    };
+    this.click = this.click.bind(this);
   }
 
   componentWillMount() {
@@ -67,8 +74,9 @@ class Trivia extends Component {
     ]
   ];
 
-  answerClick() {
-      
+  click({ target }) {
+    console.log(target);
+    this.setState({ game: true });
   }
 
   componentWillUnmount() {
@@ -78,18 +86,24 @@ class Trivia extends Component {
   }
 
   render() {
+    const game = this.state.game;
+    const question = this.state.question;
     return (
       <div className="row" style={styles.game}>
         <div className="col-sm-6 text-center mx-auto">
-          <div className="card border-primary mb-3">
-            <div className="card-header text-white bg-primary">Timer</div>
+          <div className="card border-primary mb-3" style={styles.card}>
+            <div className="card-header text-white bg-primary">
+              <h4>{game ? 'Timer' : 'Trivia!'}</h4>
+            </div>
             <div className="card-body text-primary">
-              <h4 className="card-title">Questions Go Here</h4>
+              {game && (
+                <h3 className="card-title">{this.questionsArr[question]}</h3>
+              )}
               <div className="card-body">
                 <button
                   type="button"
                   className="btn btn-outline-primary btn-lg"
-                  onClick={this.answerClick}
+                  onClick={this.click}
                   style={styles.btn}
                 >
                   Start Game
