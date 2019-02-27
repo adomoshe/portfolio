@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import bg from './pulpfiction.jpg';
+import bg from './bg.jpg';
 
 const styles = {
   game: {

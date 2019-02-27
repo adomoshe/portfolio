@@ -38,6 +38,9 @@ class GamesHome extends Component {
           <Link to={`${currentURL}/crystal_collector`} style={styles.link}>
             <GameImage picSource={crystalImg}>Crystal Collector</GameImage>
           </Link>
+          <Link to={`${currentURL}/trivia`} style={styles.link}>
+            <GameImage picSource={crystalImg}>Crystal Collector</GameImage>
+          </Link>
         </div>
       </div>
     );
