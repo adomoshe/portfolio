@@ -13,7 +13,7 @@ const styles = {
     backgroundSize: 'cover'
   },
   card: {},
-  button: {
+  btn: {
     fontSize: '1.5rem',
     fontWeight: '900'
   }
@@ -23,6 +23,7 @@ class Trivia extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.answerClick = this.answerClick.bind(this)
   }
 
   componentWillMount() {
@@ -66,6 +67,10 @@ class Trivia extends Component {
     ]
   ];
 
+  answerClick() {
+      
+  }
+
   componentWillUnmount() {
     for (let i in styles.body) {
       document.body.style[i] = null;
@@ -84,9 +89,10 @@ class Trivia extends Component {
                 <button
                   type="button"
                   className="btn btn-outline-primary btn-lg"
-                  style={styles.button}
+                  onClick={this.answerClick}
+                  style={styles.btn}
                 >
-                  Answers Go Here
+                  Start Game
                 </button>
               </div>
             </div>
