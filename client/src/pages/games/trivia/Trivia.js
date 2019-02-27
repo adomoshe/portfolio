@@ -29,7 +29,6 @@ class Trivia extends Component {
     super(props);
     this.state = {
       correct: 0,
-      playing: false,
       question: 0
     };
     this.click = this.click.bind(this);
@@ -94,26 +93,40 @@ class Trivia extends Component {
 
   click({ target }) {
     if (target.innerHTML === 'Start Game') {
-      this.setState({ playing: true });
+      this.setState(state => ({ question: state.question + 1 }));
     } else {
       this.checkAnswer(target.id);
     }
   }
 
   checkAnswer(index) {
-    console.log(index);
+    const parsedIndex = parseInt(index)
     const game = this.game;
     const question = this.state.question;
-    if (index === game[question][2]) {
-      this.setState(state => ({
-        correct: state.correct = 1,
-        question: state.question + 1
-      }));
+
+    if (game.length === question) {
+      if (parsedIndex === game[question - 1][2]) {
+        this.setState(state => ({
+          correct: state.correct + 1
+        }));
+        this.gameOver();
+      }
     } else {
-      this.setState(state => ({
-        question: state.question + 1
-      }));
+      if (parsedIndex === game[question - 1][2]) {
+        this.setState(state => ({
+          correct: state.correct + 1,
+          question: state.question + 1
+        }));
+      } else {
+        this.setState(state => ({
+          question: state.question + 1
+        }));
+      }
     }
+  }
+
+  gameOver() {
+
   }
 
   componentWillUnmount() {
@@ -123,21 +136,22 @@ class Trivia extends Component {
   }
 
   render() {
-    const playing = this.state.playing;
+    // const correct = this.state.correct;
     const question = this.state.question;
+
     return (
       <div className="row" style={styles.game}>
         <div className="col-sm-6 text-center mx-auto">
           <div className="card border-primary mb-3" style={styles.card}>
             <div className="card-header text-white bg-primary">
-              <h4>{playing ? 'Timer' : 'Trivia!'}</h4>
+              <h4>{question ? 'Timer' : 'Trivia!'}</h4>
             </div>
             <div className="card-body text-primary">
-              {playing ? (
+              {question ? (
                 <div>
-                  <h3 className="card-title">{this.game[question][0]}</h3>
+                  <h3 className="card-title">{this.game[question - 1][0]}</h3>
                   <div className="card-body">
-                    {this.game[question][1].map((answer, index) => {
+                    {this.game[question - 1][1].map((answer, index) => {
                       return (
                         <button
                           type="button"
