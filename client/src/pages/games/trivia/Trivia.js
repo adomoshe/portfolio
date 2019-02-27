@@ -75,8 +75,11 @@ class Trivia extends Component {
   ];
 
   click({ target }) {
-    console.log(target);
-    this.setState({ game: true });
+    console.log(target.innerHTML);
+    if (target.innerHTML === 'Start Game') {
+      this.setState({ game: true });
+    } else {
+    }
   }
 
   componentWillUnmount() {
@@ -96,19 +99,36 @@ class Trivia extends Component {
               <h4>{game ? 'Timer' : 'Trivia!'}</h4>
             </div>
             <div className="card-body text-primary">
-              {game && (
-                <h3 className="card-title">{this.questionsArr[question]}</h3>
+              {game ? (
+                <div>
+                  <h3 className="card-title">{this.questionsArr[question]}</h3>
+                  <div className="card-body">
+                    {this.answersArr[question].map((answer, index) => {
+                      return (
+                        <button
+                          type="button"
+                          className="btn btn-outline-primary btn-lg"
+                          onClick={this.click}
+                          style={styles.btn}
+                        >
+                          {answer}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              ) : (
+                <div className="card-body">
+                  <button
+                    type="button"
+                    className="btn btn-outline-primary btn-lg"
+                    onClick={this.click}
+                    style={styles.btn}
+                  >
+                    Start Game
+                  </button>
+                </div>
               )}
-              <div className="card-body">
-                <button
-                  type="button"
-                  className="btn btn-outline-primary btn-lg"
-                  onClick={this.click}
-                  style={styles.btn}
-                >
-                  Start Game
-                </button>
-              </div>
             </div>
           </div>
         </div>
