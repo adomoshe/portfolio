@@ -28,8 +28,7 @@ class Trivia extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      wins: 0,
-      losses: 0,
+      correct: 0,
       playing: false,
       question: 0
     };
@@ -107,7 +106,12 @@ class Trivia extends Component {
     const question = this.state.question;
     if (index === game[question][2]) {
       this.setState(state => ({
-        wins: state.wins + 1
+        correct: state.correct = 1,
+        question: state.question + 1
+      }));
+    } else {
+      this.setState(state => ({
+        question: state.question + 1
       }));
     }
   }
