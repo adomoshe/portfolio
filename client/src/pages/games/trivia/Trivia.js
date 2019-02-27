@@ -30,7 +30,7 @@ class Trivia extends Component {
     this.state = {
       wins: 0,
       losses: 0,
-      game: false,
+      playing: false,
       question: 0
     };
     this.click = this.click.bind(this);
@@ -94,10 +94,21 @@ class Trivia extends Component {
   ];
 
   click({ target }) {
-    console.log(target.innerHTML);
     if (target.innerHTML === 'Start Game') {
-      this.setState({ game: true });
+      this.setState({ playing: true });
     } else {
+      this.checkAnswer(target.id);
+    }
+  }
+
+  checkAnswer(index) {
+    console.log(index);
+    const game = this.game;
+    const question = this.state.question;
+    if (index === game[question][2]) {
+      this.setState(state => ({
+        wins: state.wins + 1
+      }));
     }
   }
 
@@ -108,17 +119,17 @@ class Trivia extends Component {
   }
 
   render() {
-    const game = this.state.game;
+    const playing = this.state.playing;
     const question = this.state.question;
     return (
       <div className="row" style={styles.game}>
         <div className="col-sm-6 text-center mx-auto">
           <div className="card border-primary mb-3" style={styles.card}>
             <div className="card-header text-white bg-primary">
-              <h4>{game ? 'Timer' : 'Trivia!'}</h4>
+              <h4>{playing ? 'Timer' : 'Trivia!'}</h4>
             </div>
             <div className="card-body text-primary">
-              {game ? (
+              {playing ? (
                 <div>
                   <h3 className="card-title">{this.game[question][0]}</h3>
                   <div className="card-body">
@@ -127,6 +138,7 @@ class Trivia extends Component {
                         <button
                           type="button"
                           className="btn btn-outline-primary btn-lg"
+                          id={index}
                           key={index}
                           onClick={this.click}
                           style={styles.btn}
