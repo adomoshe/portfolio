@@ -29,6 +29,7 @@ class Trivia extends Component {
     super(props);
     this.state = {
       playing: false,
+      timer: 30,
       correct: 0,
       question: 0
     };
@@ -94,26 +95,28 @@ class Trivia extends Component {
 
   click({ target }) {
     if (target.innerHTML === 'Start Game') {
-      this.setState(state => ({ playing: true, question: state.question + 1 }));
+      this.setState({ playing: true, question: 1 });
     } else if (target.innerHTML === 'Play Again?') {
-      this.setState({ playing: true, question: 0 });
+      this.setState({ playing: true, correct: 0, question: 1 });
     } else {
       this.checkAnswer(target.id);
     }
+    this.timer()
   }
 
   checkAnswer(index) {
     const parsedIndex = parseInt(index);
     const game = this.game;
     const question = this.state.question;
+    this.timer('clear');
 
     if (game.length === question) {
       if (parsedIndex === game[question - 1][2]) {
         this.setState(state => ({
           correct: state.correct + 1
         }));
-        this.gameOver();
       }
+      this.gameOver();
     } else {
       if (parsedIndex === game[question - 1][2]) {
         this.setState(state => ({
@@ -125,6 +128,20 @@ class Trivia extends Component {
           question: state.question + 1
         }));
       }
+    }
+  }
+
+  timer(type) {
+    let timer;
+    switch (type) {
+      case 'stop':
+        clearInterval(timer);
+        break;
+      default:
+        timer = setInterval(() => {
+          this.setState(state => ({ timer: state.timer - 1 }));
+        }, 1000);
+        break;
     }
   }
 
@@ -142,9 +159,11 @@ class Trivia extends Component {
 
   render() {
     const playing = this.state.playing;
+    const timer = this.state.timer;
     const correct = this.state.correct;
     const question = this.state.question;
     const game = this.game;
+    const gameOver = game.length === question;
 
     return (
       <div className="row" style={styles.game}>
@@ -153,12 +172,10 @@ class Trivia extends Component {
             <div className="card-header text-white bg-primary">
               <h4>
                 {playing
-                  ? 'Timer'
-                  : [
-                      game.length === question
-                        ? 'Thanks for Playing!'
-                        : 'Trivia'
-                    ]}
+                  ? `Timer: ${timer}`
+                  : gameOver
+                  ? 'Game Over'
+                  : 'Very Random Trivia'}
               </h4>
             </div>
             <div className="card-body text-primary">
@@ -183,15 +200,26 @@ class Trivia extends Component {
                   </div>
                 </div>
               ) : (
-                <div className="card-body">
-                  <button
-                    type="button"
-                    className="btn btn-outline-primary btn-lg"
-                    onClick={this.click}
-                    style={styles.btn}
-                  >
-                    {game.length === question ? 'Play Again?' : 'Start Game'}
-                  </button>
+                <div>
+                  {gameOver && (
+                    <div>
+                      <h3 className="card-title">Thanks for Playing!</h3>
+                      <br />
+                      <h3 className="card-title">
+                        You had {correct} out of {game.length} questions correct
+                      </h3>
+                    </div>
+                  )}
+                  <div className="card-body">
+                    <button
+                      type="button"
+                      className="btn btn-outline-primary btn-lg"
+                      onClick={this.click}
+                      style={styles.btn}
+                    >
+                      {gameOver ? 'Play Again?' : 'Start Game'}
+                    </button>
+                  </div>
                 </div>
               )}
             </div>
