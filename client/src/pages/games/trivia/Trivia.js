@@ -153,16 +153,20 @@ class Trivia extends Component {
             <div className="card-header text-white bg-primary">
               <h4>
                 {playing
-                  ? [game.length === question ? 'Thanks for Playing!' : 'Timer']
-                  : 'Trivia!'}
+                  ? 'Timer'
+                  : [
+                      game.length === question
+                        ? 'Thanks for Playing!'
+                        : 'Trivia'
+                    ]}
               </h4>
             </div>
             <div className="card-body text-primary">
               {playing ? (
                 <div>
-                  <h3 className="card-title">{this.game[question - 1][0]}</h3>
+                  <h3 className="card-title">{game[question - 1][0]}</h3>
                   <div className="card-body">
-                    {this.game[question - 1][1].map((answer, index) => {
+                    {game[question - 1][1].map((answer, index) => {
                       return (
                         <button
                           type="button"
@@ -186,7 +190,7 @@ class Trivia extends Component {
                     onClick={this.click}
                     style={styles.btn}
                   >
-                    Start Game
+                    {game.length === question ? 'Play Again?' : 'Start Game'}
                   </button>
                 </div>
               )}
