@@ -28,6 +28,7 @@ class Trivia extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      playing: false,
       correct: 0,
       question: 0
     };
@@ -93,14 +94,16 @@ class Trivia extends Component {
 
   click({ target }) {
     if (target.innerHTML === 'Start Game') {
-      this.setState(state => ({ question: state.question + 1 }));
+      this.setState(state => ({ playing: true, question: state.question + 1 }));
+    } else if (target.innerHTML === 'Play Again?') {
+      this.setState({ playing: true, question: 0 });
     } else {
       this.checkAnswer(target.id);
     }
   }
 
   checkAnswer(index) {
-    const parsedIndex = parseInt(index)
+    const parsedIndex = parseInt(index);
     const game = this.game;
     const question = this.state.question;
 
@@ -126,7 +129,9 @@ class Trivia extends Component {
   }
 
   gameOver() {
-
+    this.setState({
+      playing: false
+    });
   }
 
   componentWillUnmount() {
@@ -136,18 +141,24 @@ class Trivia extends Component {
   }
 
   render() {
-    // const correct = this.state.correct;
+    const playing = this.state.playing;
+    const correct = this.state.correct;
     const question = this.state.question;
+    const game = this.game;
 
     return (
       <div className="row" style={styles.game}>
         <div className="col-sm-6 text-center mx-auto">
           <div className="card border-primary mb-3" style={styles.card}>
             <div className="card-header text-white bg-primary">
-              <h4>{question ? 'Timer' : 'Trivia!'}</h4>
+              <h4>
+                {playing
+                  ? [game.length === question ? 'Thanks for Playing!' : 'Timer']
+                  : 'Trivia!'}
+              </h4>
             </div>
             <div className="card-body text-primary">
-              {question ? (
+              {playing ? (
                 <div>
                   <h3 className="card-title">{this.game[question - 1][0]}</h3>
                   <div className="card-body">
