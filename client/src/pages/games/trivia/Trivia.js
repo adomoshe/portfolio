@@ -140,14 +140,15 @@ class Trivia extends Component {
 
   timer;
 
-  timerHandler(type) {
+  async timerHandler(type) {
     switch (type) {
       case 'short':
         this.setState({ display: true });
-         return new Promise(resolve =>
-          setTimeout(resolve(this.setState({ display: false })), 5000)
-        );
-        break;
+        return new Promise(resolve => {
+          setTimeout(() => {
+            resolve(this.setState({ display: false }));
+          }, 5000);
+        });
       case 'stop':
         clearInterval(this.timer);
         break;
