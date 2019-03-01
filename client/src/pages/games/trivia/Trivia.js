@@ -101,14 +101,14 @@ class Trivia extends Component {
     } else {
       this.checkAnswer(target.id);
     }
-    this.timer()
+    this.timerHandler();
   }
 
   checkAnswer(index) {
     const parsedIndex = parseInt(index);
     const game = this.game;
     const question = this.state.question;
-    this.timer('clear');
+    this.timerHandler('stop');
 
     if (game.length === question) {
       if (parsedIndex === game[question - 1][2]) {
@@ -129,16 +129,18 @@ class Trivia extends Component {
         }));
       }
     }
+    this.setState({
+      timer: 30
+    });
   }
-
-  timer(type) {
-    let timer;
+  timer;
+  timerHandler(type) {
     switch (type) {
       case 'stop':
-        clearInterval(timer);
+        clearInterval(this.timer);
         break;
       default:
-        timer = setInterval(() => {
+        this.timer = setInterval(() => {
           this.setState(state => ({ timer: state.timer - 1 }));
         }, 1000);
         break;
