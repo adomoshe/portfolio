@@ -4,7 +4,7 @@ import bg from './bg.jpg';
 
 const styles = {
   game: {
-    marginTop: '10vh',
+    marginTop: '15vh',
     marginBottom: '5vh'
   },
   body: {
@@ -187,7 +187,7 @@ class Trivia extends Component {
         return new Promise(resolve => {
           setTimeout(() => {
             resolve(this.setState({ display: false }));
-          }, 5000);
+          }, 4000);
         });
       case 'stop':
         clearInterval(this.timer);
