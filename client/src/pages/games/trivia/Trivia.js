@@ -96,12 +96,13 @@ class Trivia extends Component {
   click({ target }) {
     if (target.innerHTML === 'Start Game') {
       this.setState({ playing: true, question: 1 });
+      this.timerHandler();
     } else if (target.innerHTML === 'Play Again?') {
       this.setState({ playing: true, correct: 0, question: 1 });
+      this.timerHandler();
     } else {
       this.checkAnswer(target.id);
     }
-    this.timerHandler();
   }
 
   checkAnswer(index) {
@@ -109,6 +110,8 @@ class Trivia extends Component {
     const game = this.game;
     const question = this.state.question;
     this.timerHandler('stop');
+
+    this.setState({ timer: 30 });
 
     if (game.length === question) {
       if (parsedIndex === game[question - 1][2]) {
@@ -128,12 +131,12 @@ class Trivia extends Component {
           question: state.question + 1
         }));
       }
+      this.timerHandler();
     }
-    this.setState({
-      timer: 30
-    });
   }
+
   timer;
+
   timerHandler(type) {
     switch (type) {
       case 'stop':
@@ -148,9 +151,7 @@ class Trivia extends Component {
   }
 
   gameOver() {
-    this.setState({
-      playing: false
-    });
+    this.setState({ playing: false });
   }
 
   componentWillUnmount() {
