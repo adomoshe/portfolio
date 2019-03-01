@@ -31,6 +31,7 @@ class Trivia extends Component {
       playing: false,
       timer: 30,
       correct: 0,
+      lastQuestionWasCorrect: false,
       question: 0,
       display: false
     };
@@ -117,7 +118,8 @@ class Trivia extends Component {
       if (game.length === question) {
         if (parsedIndex === game[question - 1][2]) {
           this.setState(state => ({
-            correct: state.correct + 1
+            correct: state.correct + 1,
+            lastQuestionWasCorrect: true
           }));
         }
         this.gameOver();
@@ -125,11 +127,13 @@ class Trivia extends Component {
         if (parsedIndex === game[question - 1][2]) {
           this.setState(state => ({
             correct: state.correct + 1,
-            question: state.question + 1
+            question: state.question + 1,
+            lastQuestionWasCorrect: true
           }));
         } else {
           this.setState(state => ({
-            question: state.question + 1
+            question: state.question + 1,
+            lastQuestionWasCorrect: false
           }));
         }
         this.timerHandler();
@@ -173,6 +177,7 @@ class Trivia extends Component {
     const playing = this.state.playing;
     const timer = this.state.timer;
     const correct = this.state.correct;
+    const lastQuestionWasCorrect = this.state.lastQuestionWasCorrect;
     const question = this.state.question;
     const display = this.state.display;
     const game = this.game;
@@ -197,7 +202,11 @@ class Trivia extends Component {
                 <div>
                   <h3 className="card-title">
                     {display
-                      ? `The Correct Answer is ${currentQuestion[1][currentQuestion[2]]}`
+                      ? lastQuestionWasCorrect
+                        ? 'Correct!'
+                        : `The Correct Answer was ${
+                            currentQuestion[1][currentQuestion[2]]
+                          }`
                       : currentQuestion[0]}
                   </h3>
                   {!display && (
