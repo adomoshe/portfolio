@@ -31,7 +31,8 @@ class Trivia extends Component {
       playing: false,
       timer: 30,
       correct: 0,
-      question: 0
+      question: 0,
+      display: false
     };
     this.click = this.click.bind(this);
   }
@@ -113,6 +114,8 @@ class Trivia extends Component {
 
     this.setState({ timer: 30 });
 
+    this.timerHandler('short');
+
     if (game.length === question) {
       if (parsedIndex === game[question - 1][2]) {
         this.setState(state => ({
@@ -139,6 +142,12 @@ class Trivia extends Component {
 
   timerHandler(type) {
     switch (type) {
+      case 'short':
+        this.setState({ display: true });
+        this.timer = setTimeout(() => {
+          this.setState({ display: false });
+        }, 5000);
+        break;
       case 'stop':
         clearInterval(this.timer);
         break;
