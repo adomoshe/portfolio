@@ -174,8 +174,10 @@ class Trivia extends Component {
     const timer = this.state.timer;
     const correct = this.state.correct;
     const question = this.state.question;
+    const display = this.state.display;
     const game = this.game;
     const gameOver = game.length === question;
+    const currentQuestion = game[question - 1];
 
     return (
       <div className="row" style={styles.game}>
@@ -193,23 +195,29 @@ class Trivia extends Component {
             <div className="card-body text-primary">
               {playing ? (
                 <div>
-                  <h3 className="card-title">{game[question - 1][0]}</h3>
-                  <div className="card-body">
-                    {game[question - 1][1].map((answer, index) => {
-                      return (
-                        <button
-                          type="button"
-                          className="btn btn-outline-primary btn-lg"
-                          id={index}
-                          key={index}
-                          onClick={this.click}
-                          style={styles.btn}
-                        >
-                          {answer}
-                        </button>
-                      );
-                    })}
-                  </div>
+                  <h3 className="card-title">
+                    {display
+                      ? `The Correct Answer is ${currentQuestion[1][currentQuestion[2]]}`
+                      : currentQuestion[0]}
+                  </h3>
+                  {!display && (
+                    <div className="card-body">
+                      {currentQuestion[1].map((answer, index) => {
+                        return (
+                          <button
+                            type="button"
+                            className="btn btn-outline-primary btn-lg"
+                            id={index}
+                            key={index}
+                            onClick={this.click}
+                            style={styles.btn}
+                          >
+                            {answer}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
               ) : (
                 <div>
