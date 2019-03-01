@@ -106,7 +106,7 @@ class Trivia extends Component {
     }
   }
 
-  checkAnswer(index) {
+  async checkAnswer(index) {
     const parsedIndex = parseInt(index);
     const game = this.game;
     const question = this.state.question;
@@ -114,28 +114,28 @@ class Trivia extends Component {
 
     this.setState({ timer: 30 });
 
-    this.timerHandler('short');
-
-    if (game.length === question) {
-      if (parsedIndex === game[question - 1][2]) {
-        this.setState(state => ({
-          correct: state.correct + 1
-        }));
-      }
-      this.gameOver();
-    } else {
-      if (parsedIndex === game[question - 1][2]) {
-        this.setState(state => ({
-          correct: state.correct + 1,
-          question: state.question + 1
-        }));
+    await this.timerHandler('short').then(() => {
+      if (game.length === question) {
+        if (parsedIndex === game[question - 1][2]) {
+          this.setState(state => ({
+            correct: state.correct + 1
+          }));
+        }
+        this.gameOver();
       } else {
-        this.setState(state => ({
-          question: state.question + 1
-        }));
+        if (parsedIndex === game[question - 1][2]) {
+          this.setState(state => ({
+            correct: state.correct + 1,
+            question: state.question + 1
+          }));
+        } else {
+          this.setState(state => ({
+            question: state.question + 1
+          }));
+        }
+        this.timerHandler();
       }
-      this.timerHandler();
-    }
+    });
   }
 
   timer;
@@ -144,9 +144,9 @@ class Trivia extends Component {
     switch (type) {
       case 'short':
         this.setState({ display: true });
-        this.timer = setTimeout(() => {
-          this.setState({ display: false });
-        }, 5000);
+         return new Promise(resolve =>
+          setTimeout(resolve(this.setState({ display: false })), 5000)
+        );
         break;
       case 'stop':
         clearInterval(this.timer);
