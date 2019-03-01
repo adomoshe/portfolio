@@ -18,7 +18,8 @@ import breakpoints from './breakpoints';
 const styles = {
   nav: {
     zIndex: '5',
-    top: '1vh',
+    top: 0,
+    marginTop: '1vh',
     position: 'fixed',
     width: '100%',
     paddingRight: '3vh'
@@ -29,6 +30,7 @@ const styles = {
   },
   menuBtn: {
     marginRight: '1vh',
+    marginLeft: '1vh',
     float: 'left',
     color: 'white'
   },
@@ -213,6 +215,7 @@ class Nav extends React.Component {
         );
       }
     };
+
     return (
       <nav style={styles.nav}>
         <div>

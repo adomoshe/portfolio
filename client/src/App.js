@@ -20,13 +20,15 @@ library.add(fab, faAt, faHandPointer, faArrowRight, faCode);
 
 const App = () => (
   <Router>
-    <div className="container-fluid">
+    <div>
       <Nav />
+      <div className="container-fluid">
       <Switch>
         <Route exact path="/" component={Main} />
         <Route path="/blog" component={Blogs} />
         <Route path="/games" component={Games} />
       </Switch>
+      </div>
     </div>
   </Router>
 );
