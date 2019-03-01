@@ -106,15 +106,14 @@ class Trivia extends Component {
     }
   }
 
-  async checkAnswer(index) {
+  checkAnswer(index) {
     const parsedIndex = parseInt(index);
     const game = this.game;
     const question = this.state.question;
     this.timerHandler('stop');
 
-    this.setState({ timer: 30 });
-
-    await this.timerHandler('short').then(() => {
+    this.timerHandler('short').then(() => {
+      this.setState({ timer: 30 });
       if (game.length === question) {
         if (parsedIndex === game[question - 1][2]) {
           this.setState(state => ({
@@ -140,7 +139,7 @@ class Trivia extends Component {
 
   timer;
 
-  async timerHandler(type) {
+  timerHandler(type) {
     switch (type) {
       case 'short':
         this.setState({ display: true });
