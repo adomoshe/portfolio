@@ -4,11 +4,13 @@ import bg from './bg.jpg';
 
 const styles = {
   navExtension: {
+    zIndex: 2,
     top: 0,
     left: 0,
     marginLeft: -20,
     width: '110%',
-    height: 72
+    height: 72,
+    position: 'fixed'
   },
   game: {
     marginTop: '12vh',
