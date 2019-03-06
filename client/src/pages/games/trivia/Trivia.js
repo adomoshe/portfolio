@@ -97,7 +97,7 @@ class Trivia extends Component {
         'Punished by execution',
         'Fined',
         'When was beer even invented?',
-        'Mesopowhaaat?',
+        'Mesopowhaaaat?',
         "Doesn't matter, I'll take 4!"
       ],
       0
