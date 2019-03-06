@@ -12,13 +12,9 @@ const styles = {
     paddingTop: '6vh',
     paddingBottom: '12vh'
   },
-  div: {
-    align: 'center'
-  },
   link: {
     color: 'black',
-    textAlign: 'center',
-    margin: 'auto'
+    textAlign: 'center'
   }
 };
 
@@ -32,7 +28,7 @@ class GamesHome extends Component {
     return (
       <div className="row justify-content-center" style={styles.row}>
         <Title>Games</Title>
-        <div style={styles.div}>
+        <div className='col-sm-4' >
           <Link to={`${currentURL}/hangman`} style={styles.link}>
             <GameImage picSource={hangmanImg}>Hangman</GameImage>
           </Link>

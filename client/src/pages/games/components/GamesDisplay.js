@@ -2,14 +2,15 @@ import React from 'react';
 
 const styles = {
   picFigure: {
-    width: '66vh',
+    width: '100%',
     textAlign: 'center',
     display: 'block'
   },
   pics: {
     boxShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
-    margin: '3vh',
-    width: '60vh'
+    width: '100%',
+    marginBottom: '3vh',
+    marginTop: '3vh'
   },
   caption: {
     marginLeft: '3vh',
