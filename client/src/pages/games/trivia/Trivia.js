@@ -133,11 +133,13 @@ class Trivia extends Component {
         }
       } else {
         if (parsedIndex === game[question - 1][2]) {
-          this.setState(state => ({ question: state.question + 1 }));
-        } else {
           this.setState(state => ({
             question: state.question + 1,
             correct: state.correct + 1
+          }));
+        } else {
+          this.setState(state => ({
+            question: state.question + 1
           }));
         }
         this.timerHandler();
