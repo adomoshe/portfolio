@@ -8,7 +8,7 @@ import crystalImg from './img/crystal.png';
 
 const styles = {
   row: {
-    paddingTop: '6vh',
+    paddingTop: '6vh', 
     paddingBottom: '12vh'
   },
   div: {
