@@ -3,8 +3,15 @@ import React, { Component } from 'react';
 import bg from './bg.jpg';
 
 const styles = {
+  navExtension: {
+    top: 0,
+    left: 0,
+    marginLeft: -20,
+    width: '110%',
+    height: 72
+  },
   game: {
-    marginTop: '15vh',
+    marginTop: '12vh',
     marginBottom: '5vh'
   },
   body: {
@@ -171,7 +178,7 @@ class Trivia extends Component {
         return new Promise(resolve => {
           setTimeout(() => {
             resolve(this.setState({ display: false }));
-          }, 2000);
+          }, 2500);
         });
       case 'stop':
         clearInterval(this.timer);
@@ -204,6 +211,8 @@ class Trivia extends Component {
     const currentQuestion = game[question - 1];
 
     return (
+      <div>
+      <div className='bg-primary' style={styles.navExtension}> </div>
       <div className="row" style={styles.game}>
         <div className="col-sm-6 text-center mx-auto">
           <div className="card border-primary mb-3" style={styles.card}>
@@ -273,6 +282,7 @@ class Trivia extends Component {
             </div>
           </div>
         </div>
+      </div>
       </div>
     );
   }

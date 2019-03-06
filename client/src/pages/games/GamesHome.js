@@ -5,10 +5,11 @@ import { Title } from '../../components/StyledTags';
 import GameImage from './components/GamesDisplay';
 import hangmanImg from './img/hangman.png';
 import crystalImg from './img/crystal.png';
+import triviaImg from './img/trivia.png';
 
 const styles = {
   row: {
-    paddingTop: '6vh', 
+    paddingTop: '6vh',
     paddingBottom: '12vh'
   },
   div: {
@@ -39,7 +40,7 @@ class GamesHome extends Component {
             <GameImage picSource={crystalImg}>Crystal Collector</GameImage>
           </Link>
           <Link to={`${currentURL}/trivia`} style={styles.link}>
-            <GameImage picSource={crystalImg}>Trivia</GameImage>
+            <GameImage picSource={triviaImg}>Trivia</GameImage>
           </Link>
         </div>
       </div>
