@@ -171,7 +171,7 @@ class Trivia extends Component {
         return new Promise(resolve => {
           setTimeout(() => {
             resolve(this.setState({ display: false }));
-          }, 4000);
+          }, 2000);
         });
       case 'stop':
         clearInterval(this.timer);
