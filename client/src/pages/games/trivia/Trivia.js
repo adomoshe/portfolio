@@ -9,16 +9,15 @@ const styles = {
     left: 0,
     marginLeft: -20,
     width: '110%',
-    height: 72,
+    height: 66,
     position: 'fixed'
   },
   game: {
-    marginTop: '12vh',
+    marginTop: '15vh',
     marginBottom: '5vh'
   },
   body: {
     backgroundImage: `url(${bg})`,
-    backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover'
   },
   card: {
