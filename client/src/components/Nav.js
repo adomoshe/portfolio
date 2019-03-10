@@ -13,8 +13,6 @@ import styled from 'styled-components';
 import { Github, LinkedIn, Medium, Email } from './Buttons';
 import breakpoints from './breakpoints';
 
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 const styles = {
   nav: {
     zIndex: '5',
@@ -26,7 +24,8 @@ const styles = {
     },
   navTitle: {
     float: 'left',
-    color: 'white'
+    color: 'white',
+    margin: 'auto'
   },
   menuBtn: {
     marginRight: '1vh',
@@ -69,92 +68,6 @@ const StyledBtn = styled.button`
     outline: none;
   }
 `;
-
-class ContactMenu extends React.Component {
-  state = {
-    open: false,
-    anchorEl: null
-  };
-
-  menuClick = e => {
-    this.state.open
-      ? this.setState({ open: false, anchorEl: null })
-      : this.setState({ open: true, anchorEl: e.currentTarget });
-  };
-
-  render() {
-    document.activeElement.blur();
-    const { anchorEl, open } = this.state;
-
-    return (
-      <div style={styles.s}>
-        <StyledBtn
-          aria-owns={open ? 'links' : undefined}
-          aria-haspopup="true"
-          style={styles.menuBtn}
-          onClick={this.menuClick}
-        >
-          <h2 style={styles.navTitle}>Ado</h2>
-        </StyledBtn>
-        <Menu
-          anchorEl={anchorEl}
-          anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'right'
-          }}
-          disableAutoFocusItem={true}
-          transformOrigin={{
-            vertical: 'top',
-            horizontal: 'right'
-          }}
-          onClose={this.menuClick}
-          open={open}
-        >
-          <StyledRegLink
-            aria-label="Link"
-            href="https://github.com/adomoshe"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <MenuItem onClick={this.menuClick}>
-              <h3>Github</h3>
-            </MenuItem>
-          </StyledRegLink>
-          <StyledRegLink
-            aria-label="Link"
-            href="https://www.linkedin.com/in/adoranmoshe"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <MenuItem onClick={this.menuClick}>
-              <h3>LinkedIn</h3>
-            </MenuItem>
-          </StyledRegLink>
-          <StyledRegLink
-            aria-label="Link"
-            href="https://medium.com/@adoran.moshe"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <MenuItem onClick={this.menuClick}>
-              <h3>Medium</h3>
-            </MenuItem>
-          </StyledRegLink>
-          <StyledRegLink
-            aria-label="Link"
-            href="mailto:adoran.moshe@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <MenuItem onClick={this.menuClick}>
-              <h3>Email</h3>
-            </MenuItem>
-          </StyledRegLink>
-        </Menu>
-      </div>
-    );
-  }
-}
 
 class Nav extends React.Component {
   state = {
@@ -271,6 +184,92 @@ class Nav extends React.Component {
         </div>
         {phone()}
       </nav>
+    );
+  }
+}
+
+class ContactMenu extends React.Component {
+  state = {
+    open: false,
+    anchorEl: null
+  };
+
+  menuClick = e => {
+    this.state.open
+      ? this.setState({ open: false, anchorEl: null })
+      : this.setState({ open: true, anchorEl: e.currentTarget });
+  };
+
+  render() {
+    document.activeElement.blur();
+    const { anchorEl, open } = this.state;
+
+    return (
+      <div style={styles.s}>
+        <StyledBtn
+          aria-owns={open ? 'links' : undefined}
+          aria-haspopup="true"
+          style={styles.menuBtn}
+          onClick={this.menuClick}
+        >
+          <h2 style={styles.navTitle}>Ado</h2>
+        </StyledBtn>
+        <Menu
+          anchorEl={anchorEl}
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'right'
+          }}
+          disableAutoFocusItem={true}
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'right'
+          }}
+          onClose={this.menuClick}
+          open={open}
+        >
+          <StyledRegLink
+            aria-label="Link"
+            href="https://github.com/adomoshe"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MenuItem onClick={this.menuClick}>
+              <h3>Github</h3>
+            </MenuItem>
+          </StyledRegLink>
+          <StyledRegLink
+            aria-label="Link"
+            href="https://www.linkedin.com/in/adoranmoshe"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MenuItem onClick={this.menuClick}>
+              <h3>LinkedIn</h3>
+            </MenuItem>
+          </StyledRegLink>
+          <StyledRegLink
+            aria-label="Link"
+            href="https://medium.com/@adoran.moshe"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MenuItem onClick={this.menuClick}>
+              <h3>Medium</h3>
+            </MenuItem>
+          </StyledRegLink>
+          <StyledRegLink
+            aria-label="Link"
+            href="mailto:adoran.moshe@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MenuItem onClick={this.menuClick}>
+              <h3>Email</h3>
+            </MenuItem>
+          </StyledRegLink>
+        </Menu>
+      </div>
     );
   }
 }

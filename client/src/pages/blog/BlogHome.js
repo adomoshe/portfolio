@@ -40,18 +40,18 @@ class BlogHome extends Component {
           </Link>
           <h2 style={styles.category}>Spain (Study Abroad)</h2>
           <h3 style={styles.dates}>&emsp;March, 2016</h3>
-          <Link to={`${currentURL}/spring-break`} style={styles.link}>
-            <h3>Spring Break Road Trip Into Portugal</h3>
-          </Link>
           <Link to={`${currentURL}/dublin`} style={styles.link}>
             <h3>Dublin, Ireland</h3>
           </Link>
-          <h3 style={styles.dates}>&emsp;January, 2016</h3>
-          <Link to={`${currentURL}/week_2`} style={styles.link}>
-            <h3>Week 2 in Barcelona (Montserrat, Sailing, and Futbol)</h3>
+          <Link to={`${currentURL}/spring-break`} style={styles.link}>
+            <h3>Spring Break Road Trip Into Portugal</h3>
           </Link>
+          <h3 style={styles.dates}>&emsp;January, 2016</h3>
           <Link to={`${currentURL}/arrival`} style={styles.link}>
             <h3>Arrival (Including Connection in Amsterdam)</h3>
+          </Link>
+          <Link to={`${currentURL}/week_2`} style={styles.link}>
+            <h3>Week 2 in Barcelona (Montserrat, Sailing, and Futbol)</h3>
           </Link>
         </div>
       </div>

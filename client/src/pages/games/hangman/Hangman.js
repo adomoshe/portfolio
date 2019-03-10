@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
+
 import bg from './bg.jpg';
 
 const styles = {
   game: {
-    marginTop: '15vh',
-    marginLeft: '4vh'
+    marginTop: '10vh',
+    paddingLeft: '4vh'
   },
   body: {
     backgroundImage: `url(${bg})`,
-    backgroundRepeat: 'no-repeat',
+    // backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover'
+  },
+  input: {
+    opacity: 0,
+    cursor: 'default'
   },
   text: {
     color: 'white'
@@ -53,6 +58,9 @@ class Hangman extends Component {
 
   componentDidMount() {
     document.addEventListener('keyup', this.initial);
+
+    // Using this to force keyboard to popup on phones
+    document.getElementById("hackingAway").focus();
   }
 
   initial(e) {
@@ -209,7 +217,9 @@ class Hangman extends Component {
     const gameOn = this.state.gameOn;
 
     return (
-      <div style={styles.game}>
+      <div className="row" >
+      <div className="col-sm-4 " style={styles.game}>
+      <input type="text" id='hackingAway' style={styles.input}></input>
         <h1 style={styles.text}>Hangman!</h1>
         <br />
         <h2 style={styles.text}>Tarantino Movies Edition</h2>
@@ -231,6 +241,7 @@ class Hangman extends Component {
             <h2 style={styles.text}>{this.state.display}</h2>
           </span>
         )}
+      </div>
       </div>
     );
   }
