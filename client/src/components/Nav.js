@@ -21,7 +21,7 @@ const styles = {
     position: 'fixed',
     width: '100%',
     paddingRight: '3vh'
-    },
+  },
   navTitle: {
     float: 'left',
     color: 'white',
