@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import breakpoints from '../../../components/breakpoints'
 import bg from './img/background.jpg';
 import crystal1 from './img/crystal1.png';
 import crystal2 from './img/crystal2.png';
@@ -14,8 +15,12 @@ const styles = {
   },
   body: {
     backgroundImage: `url(${bg})`,
-    // backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover'
+  },
+  instructions: {
+    maxHeight: '85vh',
+    overflow: 'scroll',
+    color: 'white'
   },
   text: {
     color: 'white'
@@ -26,8 +31,11 @@ const styles = {
     fontWeight: '900'
   },
   crystal: {
+    height: '20vh',
     display: 'block',
-    marginBottom: '2vh'
+    margin: '1vh',
+    background: 'transparent',
+    cursor: 'pointer'
   }
 };
 
@@ -116,6 +124,11 @@ class Crystal extends Component {
   }
 
   render() {
+
+    if (window.innerWidth <= breakpoints.s) {
+      styles.crystal.display = null;
+    }
+
     const wins = this.state.wins;
     const losses = this.state.losses;
     const goalNumber = this.state.goalNumber;
@@ -129,7 +142,6 @@ class Crystal extends Component {
           {crystalArr.map((crystalImg, index) => (
             <img
               name={'crystal' + (index + 1)}
-              type="button"
               style={styles.crystal}
               src={crystalImg}
               key={index}
@@ -169,9 +181,9 @@ class Crystal extends Component {
           )}
           <br />
         </div>
-        <div className="col-sm-3">
+        <div className="col-sm-3" style={styles.instructions}>
           <h3 style={styles.text}>Instructions:</h3>
-          <p style={styles.text}>
+          <p style={styles.instructions}>
             When pressed, each crystal adds a random number between 1-19 to
             "Your Total". That crystal will always add the same number until the
             game is over. To win, the player must figure out how to add "Your
