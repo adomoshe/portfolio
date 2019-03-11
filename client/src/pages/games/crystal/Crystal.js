@@ -14,7 +14,7 @@ const styles = {
   },
   body: {
     backgroundImage: `url(${bg})`,
-    backgroundRepeat: 'no-repeat',
+    // backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover'
   },
   text: {
