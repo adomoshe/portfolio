@@ -1,6 +1,6 @@
 // Nav component for all pages
 
-import React from 'react';
+import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 
 import IconButton from '@material-ui/core/IconButton';
@@ -69,7 +69,7 @@ const StyledBtn = styled.button`
   }
 `;
 
-class Nav extends React.Component {
+class Nav extends Component {
   state = {
     open: false,
     anchorEl: null
