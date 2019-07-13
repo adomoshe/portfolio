@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Ado's React Portfolio",
   "main": "server.js",
+  "engines": {
+    "node": "12.6.0"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "if-env": "^1.0.4"
