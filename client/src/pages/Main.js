@@ -20,8 +20,8 @@ class Main extends Component {
         <About />
         <Skills />
         <Projects />
-        <Education />
         <Experience />
+        <Education />
         <Footer niki />
       </div>
     );

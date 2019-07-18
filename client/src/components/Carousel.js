@@ -1,22 +1,22 @@
-import React from 'react';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Carousel } from 'react-responsive-carousel';
+import React from "react";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import img1 from '../assets/img/carousel/1.jpg';
-import img2 from '../assets/img/carousel/2.jpg';
-import img3 from '../assets/img/carousel/3.jpg';
-import img4 from '../assets/img/carousel/4.jpg';
-import img5 from '../assets/img/carousel/5.jpg';
-import img6 from '../assets/img/carousel/6.jpg';
-import img7 from '../assets/img/carousel/7.jpg';
-import img8 from '../assets/img/carousel/8.jpg';
-import img9 from '../assets/img/carousel/9.jpg';
-import img10 from '../assets/img/carousel/10.jpg';
-import img11 from '../assets/img/carousel/11.jpg';
-import img12 from '../assets/img/carousel/12.jpg';
-import img13 from '../assets/img/carousel/13.jpg';
-import img14 from '../assets/img/carousel/14.jpg';
+import img1 from "../assets/img/carousel/1.jpg";
+import img2 from "../assets/img/carousel/2.jpg";
+import img3 from "../assets/img/carousel/3.jpg";
+import img4 from "../assets/img/carousel/4.jpg";
+import img5 from "../assets/img/carousel/5.jpg";
+import img6 from "../assets/img/carousel/6.jpg";
+import img7 from "../assets/img/carousel/7.jpg";
+import img8 from "../assets/img/carousel/8.jpg";
+import img9 from "../assets/img/carousel/9.jpg";
+import img10 from "../assets/img/carousel/10.jpg";
+import img11 from "../assets/img/carousel/11.jpg";
+import img12 from "../assets/img/carousel/12.jpg";
+import img13 from "../assets/img/carousel/13.jpg";
+import img14 from "../assets/img/carousel/14.jpg";
 
 const picsArr = [
   img1,
@@ -51,22 +51,22 @@ const picsArr = [
 
 const styles = {
   carouselDiv: {
-    boxShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
-    marginTop: '1vh',
-    width: '100%',
-    height: '43vw'
+    boxShadow: "0px 8px 20px 8px rgba(0,0,0,0.6)",
+    marginTop: "1vh",
+    width: "100%",
+    height: "43vw"
   },
   carousel: {
-    width: '100%',
-    height: '43vw'
+    width: "100%",
+    height: "43vw"
   },
   imgDiv: {
-    width: '100%',
-    height: '43vw'
+    width: "100%",
+    height: "43vw"
   },
   img: {
-    width: '100%',
-    height: '100%'
+    width: "100%",
+    height: "100%"
   }
 };
 

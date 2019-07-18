@@ -1,18 +1,18 @@
-import React from 'react';
-import { Title, ListItem } from './StyledTags';
+import React from "react";
+import { Title, ListItem } from "./StyledTags";
 
 const styles = {
   rootDiv: {},
   title: {
     // fontShadow: '0px 8px 20px 8px rgba(0,0,0,0.6)',
-    fontSize: '3rem',
-    fontWeight: '900',
-    margin: '2vw'
+    fontSize: "3rem",
+    fontWeight: "900",
+    margin: "2vw"
   },
   h3: {},
   li: {
-    listStyleType: 'none',
-    marginLeft: '-1vw'
+    listStyleType: "none",
+    marginLeft: "-1vw"
   }
 };
 
@@ -21,6 +21,31 @@ const Experience = () => {
     <div style={styles.rootDiv}>
       <div className="row">
         <Title>Experience</Title>
+      </div>
+      <div className="row justify-content-center">
+        <div className="col-sm-6">
+          <h3 style={styles.h3}>
+            Full Stack Web Developer - AST POS
+            <br />
+            Apr '19 - Present, Pleasanton, CA
+          </h3>
+          <ul>
+            <ListItem>
+              Set up RESTfully routed, secure Nginx reverse proxy PM2 Node
+              server using JWT OAuth
+            </ListItem>
+            <ListItem>
+              Served custom React app offering restaurant clients an intuitive
+              UI to connect with their local Postgres databases and modify their
+              menu and various settings
+            </ListItem>
+            <ListItem>
+              React Native implementation integrating a camera barcode scanner
+              for inventory management
+            </ListItem>
+          </ul>
+          <br />
+        </div>
       </div>
       <div className="row justify-content-center">
         <div className="col-sm-6">
